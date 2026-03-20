@@ -1,0 +1,156 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\citation{mohammadjafari2024text2sql,liu2024llmtext2sql}
+\citation{woods1978lunar}
+\citation{zhong2017seq2sql}
+\citation{guo2019irnet}
+\citation{wang2019rat}
+\citation{lin2020bridging}
+\citation{hui2022s2sql}
+\citation{brown2020language,openai2023gpt4,touvron2023llama}
+\citation{pourreza2023din}
+\citation{gao2023dail}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{2}{2}{Related Work}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Text-to-SQL Generation}{2}{subsection.2.1}\protected@file@percent }
+\citation{lei2020schema}
+\citation{devlin2019bert}
+\citation{shi2020encoding}
+\citation{kipf2017semi,velivckovic2018graph}
+\citation{wang2025linkalign}
+\citation{ji2021survey}
+\citation{petful2010rdf2graph}
+\citation{poggi2008linking}
+\citation{edge2024graphrag}
+\citation{wang2017knowledge}
+\citation{bordes2013transe}
+\citation{sun2019rotate}
+\citation{dettmers2018conve}
+\citation{hamilton2017inductive,schlichtkrull2018modeling}
+\citation{kipf2017semi}
+\citation{velivckovic2018graph}
+\citation{wang2019heterogeneous}
+\citation{chen2020simple,oord2018representation}
+\citation{lewis2020retrieval,guu2020retrieval}
+\citation{karpukhin2020dense}
+\citation{xiong2020answering}
+\citation{johnson2019faiss}
+\citation{malkov2018efficient}
+\citation{reimers2019sentence,xiao2023bge}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Schema Linking}{3}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Knowledge Graphs for Data Access}{3}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Knowledge Graph Embedding and Graph Neural Networks}{3}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Retrieval-Augmented Generation}{3}{subsection.2.5}\protected@file@percent }
+\citation{li2024data,yang2023foundation}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Preliminaries}{4}{section.3}\protected@file@percent }
+\newlabel{sec:preliminaries}{{3}{4}{Preliminaries}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Problem Definition}{4}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Unified Knowledge Graph}{4}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Method}{4}{section.4}\protected@file@percent }
+\newlabel{sec:method}{{4}{4}{Method}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Unified Knowledge Graph Construction}{4}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}HeteroSchemaGNN: Heterogeneous Graph Neural Encoder}{5}{subsection.4.2}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces HeteroSchemaGNN Training Process}}{5}{algorithm.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{algo:heteroschemagnn}{{1}{5}{HeteroSchemaGNN Training Process}{algorithm.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Multi-Source Joint Retrieval}{5}{subsection.4.3}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Joint Retrieval Process}}{6}{algorithm.2}\protected@file@percent }
+\newlabel{algo:retrieval}{{2}{6}{Joint Retrieval Process}{algorithm.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Computational Complexity Analysis}{6}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Knowledge-Constrained SQL Generation}{6}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Architecture Overview}{7}{subsection.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Experiments}{7}{section.5}\protected@file@percent }
+\newlabel{sec:experiments}{{5}{7}{Experiments}{section.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Dataset Statistics}}{7}{table.caption.4}\protected@file@percent }
+\newlabel{tab:dataset_stats}{{1}{7}{Dataset Statistics}{table.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Datasets}{7}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Baseline Methods}{7}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Experimental Settings}{8}{subsection.5.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Retrieval Performance Comparison}}{8}{table.caption.5}\protected@file@percent }
+\newlabel{tab:retrieval}{{2}{8}{Retrieval Performance Comparison}{table.caption.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces SQL Generation Performance on Spider}}{8}{table.caption.6}\protected@file@percent }
+\newlabel{tab:generation}{{3}{8}{SQL Generation Performance on Spider}{table.caption.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Hyperparameter Sensitivity Analysis}}{8}{table.caption.7}\protected@file@percent }
+\newlabel{tab:hyperparams}{{4}{8}{Hyperparameter Sensitivity Analysis}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Results}{8}{section.6}\protected@file@percent }
+\newlabel{sec:results}{{6}{8}{Results}{section.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Performance by Query Type on Spider}}{9}{table.caption.8}\protected@file@percent }
+\newlabel{tab:query_type}{{5}{9}{Performance by Query Type on Spider}{table.caption.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Component Contribution Analysis}}{9}{table.caption.9}\protected@file@percent }
+\newlabel{tab:component_contribution}{{6}{9}{Component Contribution Analysis}{table.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Results on BIRD Benchmark}}{9}{table.caption.10}\protected@file@percent }
+\newlabel{tab:bird}{{7}{9}{Results on BIRD Benchmark}{table.caption.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Performance by Query Complexity on Spider}}{9}{table.caption.11}\protected@file@percent }
+\newlabel{tab:complexity}{{8}{9}{Performance by Query Complexity on Spider}{table.caption.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Error Analysis: Failure Distribution}}{9}{table.caption.12}\protected@file@percent }
+\newlabel{tab:error_analysis}{{9}{9}{Error Analysis: Failure Distribution}{table.caption.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Ablation Study Analysis}{9}{subsection.6.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Retrieval Results for Case Study Query}}{10}{table.caption.13}\protected@file@percent }
+\newlabel{tab:case_study}{{10}{10}{Retrieval Results for Case Study Query}{table.caption.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Case Study: Detailed Analysis}{10}{subsection.6.2}\protected@file@percent }
+\newlabel{sec:case_study}{{6.2}{10}{Case Study: Detailed Analysis}{subsection.6.2}{}}
+\newlabel{lst:generated_sql}{{1}{10}{Generated SQL for the case study query}{lstlisting.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces Generated SQL for the case study query}}{10}{lstlisting.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Discussion}{10}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Limitations}{11}{subsection.6.4}\protected@file@percent }
+\bibstyle{plain}
+\bibdata{references}
+\bibcite{bordes2013transe}{{1}{}{{}}{{}}}
+\bibcite{brown2020language}{{2}{}{{}}{{}}}
+\bibcite{chen2020simple}{{3}{}{{}}{{}}}
+\bibcite{dettmers2018conve}{{4}{}{{}}{{}}}
+\bibcite{devlin2019bert}{{5}{}{{}}{{}}}
+\bibcite{edge2024graphrag}{{6}{}{{}}{{}}}
+\bibcite{gao2023dail}{{7}{}{{}}{{}}}
+\bibcite{guo2019irnet}{{8}{}{{}}{{}}}
+\bibcite{guu2020retrieval}{{9}{}{{}}{{}}}
+\bibcite{hamilton2017inductive}{{10}{}{{}}{{}}}
+\bibcite{hui2022s2sql}{{11}{}{{}}{{}}}
+\bibcite{ji2021survey}{{12}{}{{}}{{}}}
+\bibcite{johnson2019faiss}{{13}{}{{}}{{}}}
+\bibcite{karpukhin2020dense}{{14}{}{{}}{{}}}
+\bibcite{kipf2017semi}{{15}{}{{}}{{}}}
+\bibcite{lei2020schema}{{16}{}{{}}{{}}}
+\bibcite{lewis2020retrieval}{{17}{}{{}}{{}}}
+\bibcite{li2024data}{{18}{}{{}}{{}}}
+\bibcite{lin2020bridging}{{19}{}{{}}{{}}}
+\bibcite{liu2024llmtext2sql}{{20}{}{{}}{{}}}
+\bibcite{malkov2018efficient}{{21}{}{{}}{{}}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{12}{section.7}\protected@file@percent }
+\newlabel{sec:conclusion}{{7}{12}{Conclusion}{section.7}{}}
+\@writefile{toc}{\contentsline {section}{References}{12}{section*.15}\protected@file@percent }
+\bibcite{mohammadjafari2024text2sql}{{22}{}{{}}{{}}}
+\bibcite{oord2018representation}{{23}{}{{}}{{}}}
+\bibcite{openai2023gpt4}{{24}{}{{}}{{}}}
+\bibcite{petful2010rdf2graph}{{25}{}{{}}{{}}}
+\bibcite{poggi2008linking}{{26}{}{{}}{{}}}
+\bibcite{pourreza2023din}{{27}{}{{}}{{}}}
+\bibcite{reimers2019sentence}{{28}{}{{}}{{}}}
+\bibcite{schlichtkrull2018modeling}{{29}{}{{}}{{}}}
+\bibcite{shi2020encoding}{{30}{}{{}}{{}}}
+\bibcite{sun2019rotate}{{31}{}{{}}{{}}}
+\bibcite{touvron2023llama}{{32}{}{{}}{{}}}
+\bibcite{velivckovic2018graph}{{33}{}{{}}{{}}}
+\bibcite{wang2019rat}{{34}{}{{}}{{}}}
+\bibcite{wang2017knowledge}{{35}{}{{}}{{}}}
+\bibcite{wang2019heterogeneous}{{36}{}{{}}{{}}}
+\bibcite{wang2025linkalign}{{37}{}{{}}{{}}}
+\bibcite{woods1978lunar}{{38}{}{{}}{{}}}
+\bibcite{xiao2023bge}{{39}{}{{}}{{}}}
+\bibcite{xiong2020answering}{{40}{}{{}}{{}}}
+\bibcite{yang2023foundation}{{41}{}{{}}{{}}}
+\bibcite{zhong2017seq2sql}{{42}{}{{}}{{}}}
+\newlabel{tocindent-1}{0pt}
+\newlabel{tocindent0}{0pt}
+\newlabel{tocindent1}{4.185pt}
+\newlabel{tocindent2}{10.34999pt}
+\newlabel{tocindent3}{0pt}
+\newlabel{tocindent4}{0pt}
+\newlabel{tocindent5}{0pt}
+\providecommand\NAT@force@numbers{}\NAT@force@numbers
+\newlabel{TotPages}{{13}{13}{}{page.13}{}}
+\gdef \@abspage@last{13}

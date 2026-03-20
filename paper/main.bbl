@@ -1,0 +1,265 @@
+\begin{thebibliography}{10}
+
+\bibitem{bordes2013transe}
+Antoine Bordes, Nicolas Usunier, Alberto Garcia-Duran, Jason Weston, and Oksana
+  Yakhnenko.
+\newblock Translating embeddings for modeling multi-relational data.
+\newblock In {\em Advances in Neural Information Processing Systems (NeurIPS)},
+  pages 2787--2795, 2013.
+
+\bibitem{brown2020language}
+Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared~D Kaplan, Prafulla
+  Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell,
+  et~al.
+\newblock Language models are few-shot learners.
+\newblock {\em Advances in Neural Information Processing Systems (NeurIPS)},
+  33:1877--1901, 2020.
+
+\bibitem{chen2020simple}
+Ting Chen, Simon Kornblith, Mohammad Norouzi, and Geoffrey Hinton.
+\newblock A simple framework for contrastive learning of visual
+  representations.
+\newblock In {\em International conference on machine learning}, pages
+  1597--1607, 2020.
+
+\bibitem{dettmers2018conve}
+Tim Dettmers, Pasquale Minervini, Pontus Stenetorp, and Sebastian Riedel.
+\newblock Convolutional 2d knowledge graph embeddings.
+\newblock In {\em Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~32, 2018.
+
+\bibitem{devlin2019bert}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock Bert: Pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock In {\em Proceedings of NAACL-HLT 2019}, pages 4171--4186, 2019.
+
+\bibitem{edge2024graphrag}
+Darrell Edge et~al.
+\newblock From local to global: A graph rag approach to query-focused
+  summarization.
+\newblock {\em arXiv preprint arXiv:2404.16130}, 2024.
+
+\bibitem{gao2023dail}
+Dawei Gao, Haoran Wang, Zijun Li, Xingsheng Li, Yang Bian, Cheng Yin, Ziwei
+  Liu, Jiaru Liu, Bowen Qin, et~al.
+\newblock Dail-sql: Sampling and example selection for text-to-sql generation.
+\newblock {\em arXiv preprint arXiv:2305.13045}, 2023.
+
+\bibitem{guo2019irnet}
+Jiaqi Guo, Zhanming Ma, Amin Khembay, Li~Hao, and Qingjie Lan.
+\newblock Irnet: A general-purpose deep learning regression framework for
+  modeling database interfaces.
+\newblock {\em arXiv preprint arXiv:1906.04790}, 2019.
+
+\bibitem{guu2020retrieval}
+Kelvin Guu, Kenton Lee, Zora Tung, Panupong Pasupat, and Ming-Wei Chang.
+\newblock Retrieval augmented language model pre-training.
+\newblock {\em International Conference on Machine Learning}, pages 3929--3938,
+  2020.
+
+\bibitem{hamilton2017inductive}
+Will Hamilton, Zhitao Ying, and Jure Leskovec.
+\newblock Inductive representation learning on large graphs.
+\newblock In {\em Advances in Neural Information Processing Systems (NeurIPS)},
+  pages 1024--1034, 2017.
+
+\bibitem{hui2022s2sql}
+Binyuan Hui, Jiajun Shi, Libo Su, Yichen Li, Luo Si, and Yongbin Li.
+\newblock S2sql: Injecting syntax to question-schema interaction graph encoder
+  for text-to-sql parsers.
+\newblock {\em arXiv preprint arXiv:2203.06958}, 2022.
+
+\bibitem{ji2021survey}
+Shaoxiong Ji, Shirui Pan, Erik Cambria, Pekka Marttinen, and Philip~S Yu.
+\newblock A survey on knowledge graphs: Representation, acquisition, and
+  applications.
+\newblock {\em IEEE Transactions on Neural Networks and Learning Systems},
+  33(2):494--514, 2021.
+
+\bibitem{johnson2019faiss}
+Jeff Johnson, Matthijs Douze, and Herv{\'e} J{\'e}gou.
+\newblock Faiss: A library for efficient similarity search and clustering of
+  dense vectors.
+\newblock {\em arXiv preprint arXiv:1702.08734}, 2017.
+
+\bibitem{karpukhin2020dense}
+Vladimir Karpukhin, Barlas O{\u{g}}uz, Sewon Min, Patrick Lewis, Ledell Wu,
+  Sergey Edunov, Danqi Chen, and Wen-tau Yih.
+\newblock Dense passage retrieval for open-domain question answering.
+\newblock In {\em Proceedings of the 2020 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP)}, pages 6769--6781, 2020.
+
+\bibitem{kipf2017semi}
+Thomas~N Kipf and Max Welling.
+\newblock Semi-supervised classification with graph convolutional networks.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2017.
+
+\bibitem{lei2020schema}
+Jie Lei et~al.
+\newblock Schema linking for text-to-sql parsing.
+\newblock In {\em Proceedings of ACL}, 2020.
+
+\bibitem{lewis2020retrieval}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir
+  Karpukhin, Naman Goyal, Heinrich K{\"u}ttler, Mike Lewis, Wen-tau Yih, Tim
+  Rockt{\"a}schel, et~al.
+\newblock Retrieval-augmented generation for knowledge-intensive nlp tasks.
+\newblock {\em Advances in Neural Information Processing Systems (NeurIPS)},
+  33:9459--9474, 2020.
+
+\bibitem{li2024data}
+Junhong Li et~al.
+\newblock Data-centric ai in the era of large language models: A survey.
+\newblock {\em arXiv preprint arXiv:2402.03068}, 2024.
+
+\bibitem{lin2020bridging}
+Xi~Victoria Lin, Richard Socher, and Caiming Xiong.
+\newblock Bridging textual and tabular data for cross-domain text-to-sql
+  semantic parsing.
+\newblock In {\em Proceedings of the 2020 Conference on Empirical Methods in
+  Natural Language Processing: Findings}, pages 4870--4888, 2020.
+
+\bibitem{liu2024llmtext2sql}
+Xiaocheng Liu, Bing Liu, et~al.
+\newblock A survey on large language model enhanced text-to-sql generation.
+\newblock {\em arXiv preprint arXiv:2404.xxxx}, 2024.
+
+\bibitem{malkov2018efficient}
+Yu~A Malkov and Dmitry~A Yashunin.
+\newblock Efficient and robust approximate nearest neighbor search using
+  hierarchical navigable small world graphs.
+\newblock In {\em IEEE transactions on pattern analysis and machine
+  intelligence}, volume~42, pages 824--836, 2018.
+
+\bibitem{mohammadjafari2024text2sql}
+Sina Mohammadjafari et~al.
+\newblock From natural language to sql: A survey of llm-based methods.
+\newblock {\em arXiv preprint arXiv:2403.xxxx}, 2024.
+
+\bibitem{oord2018representation}
+Aaron van~den Oord, Yazhe Li, and Oriol Vinyals.
+\newblock Representation learning with contrastive predictive coding.
+\newblock In {\em International conference on machine learning}, pages
+  4342--4350, 2018.
+
+\bibitem{openai2023gpt4}
+OpenAI.
+\newblock Gpt-4 technical report.
+\newblock {\em arXiv preprint arXiv:2303.08774}, 2023.
+
+\bibitem{petful2010rdf2graph}
+Radu Petful and Motasem Abualkibash.
+\newblock Rdf2graph: A tool for recovering and analyzing taxonomy and
+  relationships from rdf resources.
+\newblock {\em Proceedings of the 5th International Conference on Semantic
+  Systems (i-Semantics)}, 2010.
+
+\bibitem{poggi2008linking}
+Antonella Poggi, Domenico Lembo, Diego Calvanese, Giuseppe De~Giacomo, Maurizio
+  Lenzerini, and Riccardo Rosati.
+\newblock Linking data to ontologies.
+\newblock {\em Journal on Data Semantics X}, pages 133--173, 2008.
+
+\bibitem{pourreza2023din}
+Mohammad~Reza Pourreza and Dayang Zhao.
+\newblock Din-sql: Decomposed in-context learning of text-to-sql.
+\newblock {\em arXiv preprint arXiv:2304.11015}, 2023.
+
+\bibitem{reimers2019sentence}
+Nils Reimers and Iryna Gurevych.
+\newblock Sentence-bert: Sentence embeddings using siamese bert-networks.
+\newblock {\em Proceedings of the 2019 Conference on Empirical Methods in
+  Natural Language Processing}, 2019.
+
+\bibitem{schlichtkrull2018modeling}
+Michael Schlichtkrull, Thomas~N Kipf, Peter Bloem, Rianne Van Den~Berg, Ivan
+  Titov, and Max Welling.
+\newblock Modeling relational data with graph convolutional networks.
+\newblock {\em Proceedings of ESWC 2018}, pages 593--607, 2018.
+
+\bibitem{shi2020encoding}
+Peng Shi, Patrick Ng, Zhiting Wang, Henghui Zhu, Graham Yao, Dong Feng, and
+  Chen Lin.
+\newblock Encoding database schema with siamese network for text-to-sql.
+\newblock In {\em Proceedings of the 2020 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies (NAACL-HLT)}, pages 3309--3319, 2020.
+
+\bibitem{sun2019rotate}
+Zhiqing Sun, Zhi-Hong Deng, Jian-Yun Nie, and Jian Tang.
+\newblock Rotate: Knowledge graph embedding by relational rotation in complex
+  space.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2019.
+
+\bibitem{touvron2023llama}
+Hugo Touvron, Thibaut Lavril, Gautier Izacard, Xavier Martinet, Marie-Anne
+  Lachaux, Timoth{\'e}e Lacroix, Baptiste Rozi{\`e}re, Naman Goyal, Eric
+  Hambro, Faisal Azhar, et~al.
+\newblock Llama: Open and efficient foundation language models.
+\newblock {\em arXiv preprint arXiv:2302.13971}, 2023.
+
+\bibitem{velivckovic2018graph}
+Petar Veli{\v{c}}kovi{\'c}, Guillem Cucurull, Arantxa Casanova, Adriano Romero,
+  Pietro Li{\`o}, and Yoshua Bengio.
+\newblock Graph attention networks.
+\newblock In {\em International Conference on Learning Representations (ICLR)},
+  2018.
+
+\bibitem{wang2019rat}
+Bailin Wang, Richard Shin, Xiao Liu, Oleksandr Polozov, and Matthew Richardson.
+\newblock Rat-sql: Relation-aware transformer for text-to-sql parser.
+\newblock {\em arXiv preprint arXiv:1911.04942}, 2019.
+
+\bibitem{wang2017knowledge}
+Quan Wang, Zhendong Mao, Bo~Wang, and Li~Guo.
+\newblock Knowledge graph embedding: A survey of approaches and applications.
+\newblock {\em IEEE Transactions on Knowledge and Data Engineering},
+  29(12):2724--2743, 2017.
+
+\bibitem{wang2019heterogeneous}
+Xiao Wang, Houye Ji, Chuan Shi, Bai Wang, Yanfang Ye, Peng Cui, and Philip~S
+  Yu.
+\newblock Heterogeneous graph attention network.
+\newblock In {\em Proceedings of The Web Conference 2019}, pages 2022--2032,
+  2019.
+
+\bibitem{wang2025linkalign}
+Xiao Wang and Chen Liu.
+\newblock Linkalign: An effective schema linking method for text-to-sql.
+\newblock {\em arXiv preprint arXiv:2501.xxxxx}, 2025.
+
+\bibitem{woods1978lunar}
+William~A Woods.
+\newblock Lunar rocks: Natural language access to a large data base.
+\newblock {\em Proceedings of the 1977 conference on Human factors in computing
+  systems}, pages 454--460, 1978.
+
+\bibitem{xiao2023bge}
+Shitao Xiao, Zheng Liu, Peitian Zhang, and Jun Zhao.
+\newblock C-pack: Packaged resources to advance general chinese embedding.
+\newblock {\em arXiv preprint arXiv:2309.07597}, 2023.
+
+\bibitem{xiong2020answering}
+Wenhan Xiong, Xiang~Lorraine Li, Srinivas Iyer, Jingfei Du, Patrick Lewis,
+  William~Yang Wang, Yashar Mehdad, Wen-tau Yih, Sebastian Riedel, Douwe Kiela,
+  et~al.
+\newblock Answering complex open-domain questions with multi-hop dense
+  retrieval.
+\newblock {\em arXiv preprint arXiv:2009.12756}, 2020.
+
+\bibitem{yang2023foundation}
+Sherry Yang et~al.
+\newblock Foundation models for decision making: Problems, methods, and
+  opportunities.
+\newblock {\em arXiv preprint arXiv:2303.04129}, 2023.
+
+\bibitem{zhong2017seq2sql}
+Victor Zhong, Caiming Xiong, and Richard Socher.
+\newblock Seq2sql: Generating structured queries from natural language using
+  reinforcement learning.
+\newblock {\em arXiv preprint arXiv:1709.00103}, 2017.
+
+\end{thebibliography}

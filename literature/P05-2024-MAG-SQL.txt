@@ -1,0 +1,1137 @@
+MAG-SQL: Multi-Agent Generative Approach with Soft Schema Linking
+and Iterative Sub-SQL Refinement for Text-to-SQL
+Wenxuan Xie1*, Gaochen Wu2, Bowen Zhou2†,
+1South China University of Technology, 2Tsinghua University,
+lancelotxie601@gmail.com, zhoubowen@tsinghua.edu.cn
+Abstract
+Recent In-Context Learning based methods
+have achieved remarkable success in Text-to-
+SQL task. However, there is still a large gap
+between the performance of these models and
+human performance on datasets with complex
+database schema and difficult questions, such
+as BIRD. Besides, existing work has neglected
+to supervise intermediate steps when solving
+questions iteratively with question decompo-
+sition methods, and the schema linking meth-
+ods used in these works are very rudimentary.
+To address these issues, we propose MAG-
+SQL, a multi-agent generative approach with
+soft schema linking and iterative Sub-SQL re-
+finement. In our framework, an entity-based
+method with tables’ summary is used to select
+the columns in database, and a novel targets-
+conditions decomposition method is introduced
+to decompose those complex questions. Addi-
+tionally, we build a iterative generating module
+which includes a Sub-SQL Generator and Sub-
+SQL Refiner, introducing external oversight
+for each step of generation. Through a series
+of ablation studies, the effectiveness of each
+agent in our framework has been demonstrated.
+When evaluated on the BIRD benchmark with
+GPT-4, MAG-SQL achieves an execution ac-
+curacy of 61.08%, compared to the baseline
+accuracy of 46.35% for vanilla GPT-4 and the
+baseline accuracy of 57.56% for MAC-SQL.
+Besides, our approach makes similar progress
+on Spider. The codes are available at https:
+//github.com/LancelotXWX/MAG-SQL
+1
+Introduction
+Aiming at automatically generating SQL queries
+from natural language questions, Text-to-SQL is a
+long-standing challenge which is critical for re-
+trieving database values without human efforts
+*The work was done when he worked as an intern at Ts-
+inghua University, China
+†Corresponding authors
+Figure 1: A hard example in BIRD. Each data in the
+BIRD dataset consists of a natural language questions,
+the database schema, related external knowledge, and
+gold SQL. The difficulties corresponding to these four
+parts are listed above.
+(Qin et al., 2022).
+There are two main cate-
+gories of LLM-based Text-to-SQL approaches, In-
+Context Learning method (ICL) and Supervised
+Fine-Tuning method (Gao et al., 2023). Earlier
+work has reached human levels on the Spider
+dataset (Yu et al., 2018), but there is still a large
+gap with human performance on the BIRD dataset
+(Li et al., 2024b). A hard example in BIRD dataset
+is shown in Figure 1.
+Previous work has begun to focus on model
+collaboration (Wang et al., 2024), but it failed
+to break the 60% EX accuracy on BIRD dataset.
+Besides, some recent work has achieved signifi-
+cant improvements, but these improvements are
+1
+arXiv:2408.07930v4  [cs.CL]  7 Nov 2024
+Figure 2: The overview of our MAG-SQL workflow which consists of four agents: (i)Soft Schema Linker, which
+picks out related schema and construct database schema prompt based on soft selection, (ii)Targets-Conditions
+Decomposer, which decomposes the question at a fine-grained level, (iii)Sub-SQL Generator, which predict the next
+Sub-SQL based on the previous Sub-SQL each time, and (iv)Sub-SQL Refiner, which correct the wrong SQL based
+on the self-refine ability of LLMs.
+achieved through large-scale fine-tuning on LLMs
+(Talaei et al., 2024) or relying on large-scale sam-
+pling from LLMs (Lee et al., 2024). In order to
+address the challenges of datasets with large-Scale
+database like BIRD in a more cost-effective way,
+we introduce MAG-SQL, a multi-agent generative
+approach connecting natural language questions
+with database queries. The multi-agents workflow
+of our method is shown in Figure 2.
+For the column selection, we choose soft se-
+lection approach and present an Entity-based
+Schema Linking Method which is enhanced by
+Table Summarization and Value Retrieval. To
+decompose a complex question into a series of cas-
+cading sub-questions, we propose a new method
+called Targets-Conditions Decomposition. For
+SQL generation, we design an Iterative Gener-
+ating Module, where the generator generates the
+next Sub-SQL based on the previous Sub-SQL with
+Chain of Thoughts prompting, and each generated
+Sub-SQL has to be checked and corrected by the
+Refiner.
+We have successively evaluated MAG-SQL on
+the BIRD dataset and Spider dataset leverag-
+ing GPT-3.5 and GPT-4 as the backbone of all
+agents, respectively. Compared to the multi-agent
+framework MAC-SQL (Wang et al., 2024), MAG-
+SQL+GPT-3.5 achieves 57.62% in execution accu-
+racy which is much higher than 50.56% of MAC-
+SQL+GPT-3.5 on BIRD, while MAG-SQL+GPT-4
+reaches 61.08% compared with 57.56% for MAC-
+SQL+GPT-4 and 46.35% for vanilla GPT-4.
+In summary, our contributions are as follows:
+• We propose MAG-SQL, an advanced multi-
+agent generative approach for Text-to-SQL,
+comprising Soft Schema Linker, Targets-
+Conditions Decomposer, Sub-SQL Generator
+and Sub-SQL Refiner.
+• We design a novel Soft Schema Linker with
+a new Entity-based Schema Linking Method
+and some useful components which are em-
+ployed for Table Summarization and Value
+Retrieval.
+• We present a new approach called Targets-
+Condition Decomposition to decompose Nat-
+ural Language Queries into a sequence of Sub-
+queries.
+• We construct an Iterative Generating Module
+which involves a Sub-SQL Generator and a
+Sub-SQL Refiner, which introduces the su-
+pervision and correction of Sub-SQL at each
+intermediate step in the generation process.
+• We evaluate MAG-SQL on the BIRD dataset
+and conduct series of ablation experiments,
+which demonstrates the superiority of our
+method.
+2
+2
+Related Work
+Text-to-SQL has been a popular task in the NLP
+community, and the development of the technology
+associated with this task has also gone through
+several different phases. Early work for this task
+(Zelle and Mooney, 1996) automated the process
+of parsing database query by using inductive logic
+programming, but required heavy human efforts.
+With the development of deep learning, the use
+of neural networks for Text-to-sql parsing made a
+noticeable progress. Sequence-to-sequence model
+(Sutskever et al., 2014) implements the mapping
+of input sequences to output sequences through an
+encoder-decoder structure, and achieves even better
+performance since the introduction of the attention
+mechanism (Vaswani et al., 2017).
+Over the past few years, encoders and decoders
+have received various improvements respectively
+(Qin et al., 2022). IRNet (Guo et al., 2019) used bi-
+directional LSTM to encode the question and used
+self-attention mechanism to encode the database
+schema, along with a decoder to generate the inter-
+mediate representation called SemQL query. SQL-
+Net (Xu et al., 2017) first proposed the sketch-
+based decoding method and performed well on
+the WikiSQL (Zhong et al., 2017) dataset. Due to
+the superior performance of pre-trained language
+models (PLMs) on multiple Natural Language Pro-
+cessing (NLP) tasks, SQLova (Hwang et al., 2019)
+first used BERT as the encoder and achieve human
+performance in WikiSQL dataset.
+To better capture the relationship between the
+database schema, RAT-SQL (Wang et al., 2020)
+construct the encoder with the relation-aware self-
+attention mechanism, which broke new ground on
+the Spider (Yu et al., 2018) dataset. Furthermore,
+SADGA (Cai et al., 2021) and LGESQL (Cao et al.,
+2021) utilized graph neural network to encode the
+relational structure between the database schema
+and a given question. To enhance sketch-based de-
+coding method, RYANSQL (Choi et al., 2021) em-
+ployed convolutional neural network (CNN) with
+dense connection (Yoon et al., 2018) to encode
+each word of question and columns, and SDSQL
+(Binyuan et al., 2021) presented the Schema De-
+pendency guided method to substitute previous
+execution-guided (EG) decoding strategy (Wang
+et al., 2018).
+These traditional methods cannot achieve hu-
+man performance on the Spider (Yu et al., 2018)
+testing dataset. After the large language models
+(LLMs) have proved to be powerful in most of
+the NLP tasks, the text-to-SQL abilities of LLMs
+are evaluated on multiple benchmarks (Rajkumar
+et al., 2022). Early LLM based methods includ-
+ing QDecomp (Tai et al., 2023), C3 (Dong et al.,
+2023), QDMR (Wolfson et al., 2021) and DIN-SQL
+(Pourreza and Rafiei, 2023) focused on the strat-
+egy for task decomposition and reasoning, such
+as Chain of Thoughts (CoT) (Wei et al., 2022),
+least-to-most prompting (Zhou et al., 2022) and
+self-correction. To enhance the Text-to-SQL ability
+of LLM with In-context few-shot Learning (Brown
+et al., 2020), DAIL-SQL (Gao et al., 2023) pro-
+posed a new prompt engineering method based
+on question representation, demonstration selec-
+tion and demonstration organization. Additionally,
+DTS-SQL (Pourreza and Rafiei, 2024) and CodeS
+(Li et al., 2024a) explored the potential of open
+source LLMs via supervised fine-tuning. Beyond
+those end-to-end generation methods, DEA-SQL
+(Xie et al., 2024) and MAC-SQL (Wang et al.,
+2024) adopted multi-agent framework or work-
+flow paradigm to deal with complex databases and
+difficult problems such as BIRD dataset(Li et al.,
+2024b).
+3
+Methodology
+As shown in Figure 2, our proposed framework
+consists of four Agents: Soft Schema Linker,
+Targets-Conditions Decomposer, Sub-SQL Gen-
+erator and Sub-SQL Refiner. Among them, the
+Sub-SQL Generator and Sub-SQL Refiner together
+form the Iterative Generating Module.
+Concretely, Soft Schema Linker performs soft
+column selection on the large database schema to
+reduce the amount of irrelevant information be-
+ing described, while the Targets-Conditions De-
+composer divides the question into a series of sub-
+questions. After that, the Sub-SQL Generator gen-
+erates Sub-SQL for the current Sub-question each
+time based on the previous Sub-question and the
+previous Sub-SQL. Meanwhile, the Sub-SQL Re-
+finer employs an external tool for Sub-SQL execu-
+tion to get the feedback, and then refines incorrect
+SQL queries. The details of these agents will be
+introduced in the following sections.
+3.1
+Soft Schema Linker
+Aiming to filter the large database schema and pro-
+vide helpful information for SQL generator, the
+task of Soft Schema Linker can be divided into 5
+3
+parts: Schema Representation, Table Summariza-
+tion, Value Retrieval, Entity-based Schema Linking
+and Soft Schema Construction .
+3.1.1
+Schema Representation
+Before further analysis and processing of the
+database schema, we need to determine the
+database schema representation method. We se-
+rialise the information from a table into a list, and
+each item in the list is a tuple representing the in-
+formation of a column. For each column, there is
+column name, data type, column description and
+value examples. Besides, primary keys and foreign
+keys also need to be listed additionally because of
+their importance. Therefore, the complete database
+schema of a specific database can be represented
+as:
+S = T1 : [C1
+1, . . . Cn
+1 ]| . . . |Tm : [C1m, . . . Cnm]; KP ; KF ;
+(1)
+Cn
+m = (Nn
+m < dn
+m >, Dn
+m, V n
+m)
+(2)
+where Tm indicate the m-th table in this database,
+Cn
+m denote the n-th column in Tm. As for each
+column, Nn
+m is its name, < dn
+m > is its data type
+such as INTEGER, Dn
+m is its description, and V n
+m
+is the list of value examples in this column.
+3.1.2
+Table Summarization
+In previous work, LLM was expected to select use-
+ful columns directly based on the relevance of each
+column to the natural language question. However,
+this could lead to a consequence that LLM is prone
+to errors if two or more columns in different tables
+have similar names, descriptions, and stored val-
+ues. In reality, when SQL engineers see a table,
+they will first make a summary of the information
+stored in this table based on the columns in this
+table. And after seeing the question, they will find
+the most suitable table according to the specific
+needs at the first time, and then pick the correspond-
+ing columns. Therefore, we propose an extra step
+called Table Summarization, let LLM first make
+a summary of the information in each table, and
+then prompt LLM with both the summary and the
+complete database schema for column selection.
+We ask LLM to respond in the JSON format, as
+described in Figure 3.
+3.1.3
+Value Retrieval
+Since LLM can’t browse tables directly, LLM may
+select the incorrect columns when values of TEXT
+type appear in natural language questions, such as
+Figure 3: Output Format of the Summary
+names of people, places, and other items. For ex-
+ample, for the question "Please list the zip code of
+all the charter schools in Fresno County Office of
+Education", the value "Fresno County Office of Ed-
+ucation" is in the column <District Name>. How-
+ever, LLM is only able to know ‘Fresno County
+Office of Education’ is a place name, which make
+it difficult to select the right one out of the mul-
+tiple columns describing place names. In our ex-
+periment, LLM prefers to treat this value as the
+value of the column <County> instead of <District
+Name>. If LLM is provided with matched database
+content, the possibility of chosing the correct col-
+umn is greatly increased. In this work, we use
+longest common substring (LCS) algorithm to re-
+trived question-related values from database. We
+only apply this algorithm on data of text type and
+finally linearise the matched data and values to
+text, here is an example: frpm.‘District Name‘=
+’Fresno County Office of Education’;
+3.1.4
+Entity-based Schema Linking
+Since the columns in the SQL query statement and
+the entities in the natural language problem are
+one-to-one mapping, we present the Entity-based
+Schema Linking in order to achieve fine-grained
+column selection. The chain of thought approach
+is used to prompt LLM to complete the following
+steps:
+• Extract the entities from the natural language
+question.
+• Analyses the relevance based on Summary,
+Database schema and Hints.
+• For each entity, find at least three most rele-
+vant columns (top3 columns sorted by rele-
+vance), and then write this result into JSON
+format which is displayed in Figure 4:
+4
+Figure 4: Output Format of Linked Schema
+3.1.5
+Soft Schema Construction
+In Text-to-SQL tasks, the database schema can
+be very large, but only a small percentage of the
+columns are really needed to be used. Besides,
+providing detailed information for all columns is
+costly, not to mention that irrelevant information
+will cause disturbance. Therefore, we need to pre-
+process the database schema, keeping only the in-
+formation about useful columns. There are two
+approaches for columns selection, soft column
+selection and hard column selection (Sun et al.,
+2023). Soft column selection keep entire schema
+but add additional detailed descriptions for selected
+columns, while hard column selection removes all
+non-selected columns and retains the details of the
+chosen columns. In our work, we choose soft col-
+umn selection because this method is able to re-
+duce the length of the prompt while allowing the
+model to have access to the entire database schema,
+and we mark the additional information of the cho-
+sen columns as Detailed description of tables and
+columns. Figure 5 is an example of the whole soft
+schema which is constructed after schema linking:
+Figure 5: Example of Soft Schema
+3.2
+Targets-Conditions Decomposer
+Given the increasing complexity of natural lan-
+guage questions in Text-to-SQL tasks, generating
+SQL query in one step is not an good option. There-
+fore, recent work decompose a complex question
+into a series of sub-questions before solving them
+step by step. Nevertheless, previous work just gives
+LLM some (Question, Sub-questions) pairs as ex-
+amples, and does not propose a decomposition cri-
+terion, which may lead to inconsistent granularity
+of question decomposition. In a word, the essence
+of question decomposition in Text-to-SQL tasks is
+ignored.
+Therefore, we propose a Targets-Conditions
+Decomposition method, which ensures that all
+questions are decomposed according to the same
+criteria. This approach is based on the fact that
+all queries can be decomposed into the targets
+to be queried and the conditions used to filter the
+targets, including natural language questions in
+text-to-SQL task. Besides, the decomposition idea
+of Least-to-most Prompting proved to be effective
+in Text-t-SQL tasks, and this idea is also used in
+our method.
+Figure 6: The Targets-Conditions Decomposer Agent
+As shown in Figure 6, each sub-question is ob-
+tained by adding a condition to the previous sub-
+question except for the first one, while the first
+question is composed of targets and the first condi-
+tion.
+3.3
+Sub-SQL Generator
+As one of the most important Agents in our frame-
+work, the Sub-SQL Generator predicts Sub-SQL
+for the current Sub-question based on the previous
+Sub-question and the previous Sub-SQL. When
+processing the first Sub-question, it will generate
+the first Sub-SQL directly. The purpose of this
+design is to allow the generator to add only one
+condition at a time to the previous Sub-SQL, which
+greatly reduces the difficulty of reasoning. In or-
+der to avoid the accumulation of errors that can be
+caused by previous incorrect Sub-SQL, we use the
+5
+Figure 7: Prompt Template of Sub-SQL Generator
+Sub-SQL Refiner to introduce intermediate super-
+vision for the entire generation process.
+As a Text-to-SQL dataset close to real-world
+applications, BIRD (Li et al., 2024b) highlights
+the new challenges of dirty and noisy database val-
+ues, external knowledge grounding between NL
+questions and database values. Therefore, a wide
+variety of complex information will be put into the
+prompt, which poses a challenge for LLM to gen-
+erate SQL query through in-context learning. To
+help LLM better understand and utilise the vari-
+ous pieces of information in the prompt, we adopt
+the CoT prompting method to explicitly take infor-
+mation from different parts of the prompt in the
+reasoning steps. The complete Prompt template for
+Sub-SQL Generaotr is shown in Figure 7, and the
+Chain of Thoughts example we provided is shown
+in Figure 9.
+3.4
+Sub-SQL Refiner
+Since LLMs proved to have strong self-refine abil-
+ity, we disign the Sub-SQL Refiner to correct the
+Sub-SQL with the feedback obtained after execut-
+ing the Sub-SQL. If the currently processed Sub-
+question is not the last one, then the Sub-SQL cor-
+rected by the Refiner is returned to the Generator
+and used to generate the next Sub-SQL. Thus, Sub-
+SQL Generator and Sub-Refiner work together to
+form the Iterative Generating Module, allowing ev-
+ery intermediate step of the generating process to
+be supervised and calibrated.
+Figure 8: The Sub-SQL Refiner Agent
+As shown in Figure 8, after receiving the gener-
+ated Sub-SQL, the Refiner will employ an execu-
+tion tool to test the Sub-SQL’s execution feasibil-
+ity. If the Sub-SQL can be executed successfully,
+the Refiner should determine whether the result
+retrieved from the database is empty or not, and
+then a null value detection will be performed. If the
+executable test is not passed, the Sub-SQL will be
+corrected by LLM based on the error information.
+Then the modified SQL statement will go through
+execution test again, and if it still fails the test, the
+process will be repeated until the result is correct
+or the maximum number of corrections is reached.
+6
+Figure 9: (a) The left image illustrates the CoT used to solve the first Sub-question, (b) The right image illustrates
+the CoT used for the other Sub-questions
+4
+Experiments
+4.1
+Experimental Setup
+4.1.1
+Datasets
+Spider (Yu et al., 2018) is a large-scale, complex
+and cross-domain dataset which is widely used as a
+basic benchmark for Text-to-SQL, including 10,181
+questions and 5,693 queries across 200 databases.
+Since earlier work had achieved near-human level
+results on Spider, we chose to focus on more diffi-
+cult datasets. The recently proposed BIRD dataset
+(Li et al., 2024b) is a challenging benchmark in-
+cluding 95 large-scale real databases with dirty val-
+ues, containing 12,751 unique question-SQL pairs.
+Compared with Spider, BIRD comprises more com-
+plex SQL queries and introduces external knowl-
+edge.
+4.1.2
+Metrics
+Execution Accuracy (EX)
+EX indicates the cor-
+rectness of the execution result of the predicted
+SQL. This metric takes into account different SQL
+representations for the same question, allowing for
+a more reasonable and accurate measurement of
+the results.
+Valid Efficiency Score (VES)
+VES is a new met-
+ric introduced by BIRD dataset, measuring the effi-
+ciency of a valid SQL query based on the execution
+time. Our method also achieves an improvement
+in VES, but we do not include it in the experimen-
+tal analyses because this metric is susceptible to
+environmental effects.
+4.2
+Baselines
+We compare the proposed MAG-SQL approach
+with the following baselines based on In-context
+Learning methods with GPT-4:
+GPT-4 (Achiam et al., 2023)
+uses the zero-shot
+prompt for Text-to-SQL task.
+DIN-SQL (Pourreza and Rafiei, 2023)
+adopts
+task decomposition and applies different prompts
+for task with different complexity.
+The self-
+correction ability of LLM is also used in DIN-SQL.
+DAIL-SQL (Gao et al., 2023)
+focuses on ques-
+tion representation, demonstration selection and
+demonstration organization.
+MAC-SQL (Wang et al., 2024)
+first employs
+multi-agent framework to solve Text-to-SQL task
+based on three agents.
+4.3
+Results and Analysis
+4.3.1
+BIRD Results
+Since the test set of the BIRD benchmark is not
+available, we evaluated MAG-SQL on the dev set.
+Especially, we assessed our approach using both
+GPT-4 and GPT-3.5. As indicated in Table 1, MAG-
+SQL achieved significant performance gains on the
+BIRD dataset.
+Method
+BIRD dev
+MAG-SQL + GPT-4
+61.08
+MAG-SQL + GPT-3.5
+57.62
+MAC-SQL + GPT-4
+57.56
+DAIL-SQL + GPT-4
+54.76
+DIN-SQL + GPT-4
+50.72
+MAC-SQL + GPT-3.5
+50.56
+GPT-4
+46.35
+Table 1: BIRD results
+It can be noticed that the result of MAG-SQL is
+3.52% better than that of MAC-SQL when using
+GPT-4 as backbone, with a 14.73% performance
+7
+Method
+Simple
+Moderate
+Challenging
+All
+MAG-SQL + GPT3.5
+65.94
+46.24
+40.97
+57.62
+w/o Soft Schema Linker
+62.05
+39.78
+36.81
+52.93
+w/o Decomposer
+64.86
+44.08
+33.33
+55.60
+w/o Sub-SQL Refiner
+57.73
+34.41
+32.64
+48.31
+Table 2: Execution accuracy of MAG-SQL on BIRD dev set in agents ablation study
+Method
+Simple
+Moderate
+Challenging
+All
+MAG-SQL + GPT3.5
+65.94
+46.24
+40.97
+57.62
+w/o Table Summarization
+64.21
+45.81
+38.89
+56.26
+w/o Value Retrieval
+64.00
+45.37
+38.19
+55.93
+Table 3: Execution accuracy of MAG-SQL on BIRD dev set in Soft Schema Linker’s components ablation study
+improvement over using a single GPT-4. Moreover,
+MAG-SQL + GPT-3.5 has outperformed MAC-
+SQL + GPT-4, attaining the highest performance
+among all previous methods based on GPT-3.5,
+which proves that our method can greatly stimulate
+the potential of LLMs.
+4.3.2
+Spider Results
+To demonstrate the generalisability of our approach,
+we also evaluated MAG-SQL on the Spider dataset.
+Without any modification, MAG-SQL obtained
+11.9% improvement over GPT-4 (zero-shot), which
+proves the robustness of our method. However,
+since the Spider dataset lacks column description
+and external knowledge that would occur in real life
+problems, many components in MAG-SQL don’t
+work, and the CoT templates and demonstrations
+in our prompt differ a little from the data in Spi-
+der. Therefore, our method do not reach its full
+potential on the Spider dataset without adjustments.
+Method
+Spider dev
+Spider test
+MAG-SQL + GPT-4
+85.3
+85.6
+MAC-SQL + GPT-4
+86.8
+82.8
+DAIL-SQL + GPT-4
+84.4
+86.6
+DIN-SQL + GPT-4
+82.8
+85.3
+GPT-4 (zero-shot)
+73.4
+-
+Table 4: Spider results
+4.3.3
+Ablation Study
+Agents Ablation
+Table 2 presents the execution
+accuracy (EX) on BIRD dev set across various dif-
+ficulty levels, where different agents are removed.
+Specifically, for the experiment of MAG-SQL with-
+out Targets-Conditions Decomposer, not only did
+we omit the Decomposer, but we also changed the
+iterative generating module to a one-time gener-
+ating module and modified the prompt with CoT
+to keep it consistent. The findings show that each
+agent in MAG-SQL is important for performance
+enhancement, as removing any of them will result
+in decreased accuracy across all difficulty levels.
+Components Ablation
+In MAG-SQL, the work
+of Soft Schema Linker consists of four parts:
+Table Summarization, Value Retrieval, Entity-
+based Schema Linking and Soft Schema Construc-
+tion. Since Entity-based Schema Linking and Soft
+Schema Construction are indispensable, we con-
+ducted the ablation experiments of the components
+in Soft Schema Linker by omitting Table Summa-
+rization or Value Retrieval. As reported in Table
+3, every component plays a positive role in the
+process of schema linking.
+5
+Conclusion
+In this paper, we propose a novel multi-agent gen-
+erative approach for effecient Text-to-SQL, with
+different agents performing their respective roles.
+Concretely, our workflow consists of four LLM-
+based agents, which provides new ideas for schema-
+linking, question decomposition, SQL generation
+and SQL correction.
+We have conducted fine-
+grained task decomposition and detailed task plan-
+ning for Text-to-SQL, which fully unleashes the
+potential of LLMs. With equivalent model configu-
+rations, our approach achieves better performance
+on the BIRD dataset than all previous work at the
+time of writing this paper. Moreover, the results
+achieved by using GPT-3.5 as the backbone of our
+method have approached or even surpassed those
+of some previous GPT-4 based methods.
+8
+6
+Limitations
+Although our approach has achieved significant
+improvements on the Text-to-SQL task, there is
+still a gap compared to human performance. Every
+agent in our method could benefit from further
+improvements. Besides, there are three limitations
+in our work.
+Single
+closed-source
+backbone
+Currently,
+MAG-SQL is implemented based on a closed-
+source LLM, and the results are likely to be further
+improved if we use open-source domain-specific
+LLMs instead of closed-source general LLMs.
+For instance, the Sub-SQL Generator could be
+replaced with an open-source LLM that have been
+fine-tuned to generate SQL statements.
+Fixed Workflow
+We have pre-defined the work-
+flow of MAG-SQL, thus the pipeline is fixed dur-
+ing the whole process, which reduces the flexibil-
+ity of the multi-agent framework. In the future,
+we hope to implement a multi-agent system that
+can autonomously plan tasks and dynamically in-
+voke various tools. Moreover, we believe that the
+multi-agent collaboration mechanisms can be fur-
+ther optimised by methods such as reinforcement
+learning.
+Unstable Output
+There is another phenomenon
+to be aware of. Since the output of the LLM is
+probability-based and not stable, it is often the case
+that for the same instance, the LLM can get it right
+one time and wrong the next time. One current
+solution is using a large number of samples from
+LLMs, but this approach is costly, and if there is a
+better solution to this problem, then the final result
+will achieve a significant breakthrough. We leave
+this for future work.
+References
+Josh Achiam, Steven Adler, Sandhini Agarwal, Lama
+Ahmad, Ilge Akkaya, Florencia Leoni Aleman,
+Diogo Almeida, Janko Altenschmidt, Sam Altman,
+Shyamal Anadkat, et al. 2023. Gpt-4 technical report.
+arXiv preprint arXiv:2303.08774.
+Hui Binyuan, Xiang Shi, Ruiying Geng, Binhua Li,
+Yongbin Li, Jian Sun, and Xiaodan Zhu. 2021. Im-
+proving text-to-sql with schema dependency learning.
+Cornell University - arXiv,Cornell University - arXiv.
+T.B. Brown, Benjamin Mann, Nick Ryder, Melanie
+Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind
+Neelakantan, Pranav Shyam, Girish Sastry, Askell
+Amanda, Sandhini Agarwal, Ariel Herbert-Voss,
+Gretchen Krueger, Henighan Tom, Rewon Child,
+A. Ramesh, DanielM. Ziegler, Jeffrey Wu, Clemens
+Winter, Christopher Hesse, Mark Chen, EricJ. Sigler,
+Mateusz Litwin, Scott Gray, Chess Benjamin, Jack
+Clark, Christopher Berner, McCandlish Sam, Alec
+Radford, Ilya Sutskever, and Dario Amodei. 2020.
+Language models are few-shot learners. arXiv: Com-
+putation and Language,arXiv: Computation and Lan-
+guage.
+Ruichu Cai, Jinjie Yuan, Boyan Xu, and Zhifeng Hao.
+2021. Sadga: Structure-aware dual graph aggrega-
+tion network for text-to-sql. Neural Information Pro-
+cessing Systems,Neural Information Processing Sys-
+tems.
+Ruisheng Cao, Lu Chen, Zhi Chen, Yanbin Zhao,
+Su Zhu, and Kai Yu. 2021. Lgesql: Line graph en-
+hanced text-to-sql model with mixed local and non-
+local relations. In Proceedings of the 59th Annual
+Meeting of the Association for Computational Lin-
+guistics and the 11th International Joint Conference
+on Natural Language Processing (Volume 1: Long
+Papers).
+DongHyun Choi, Myeong Cheol Shin, EungGyun Kim,
+and Dong Ryeol Shin. 2021. Ryansql: Recursively
+applying sketch-based slot fillings for complex text-
+to-sql in cross-domain databases. Computational
+Linguistics, page 1–24.
+Xuemei Dong, Chao Zhang, Yuhang Ge, Yuren Mao,
+Yunjun Gao, Jinshu Lin, Dongfang Lou, et al. 2023.
+C3:
+Zero-shot text-to-sql with chatgpt.
+arXiv
+preprint arXiv:2307.07306.
+Dawei Gao, Haibin Wang, Yaliang Li, Xiuyu Sun,
+Yichen Qian, Bolin Ding, and Jingren Zhou. 2023.
+Text-to-sql empowered by large language mod-
+els:
+A benchmark evaluation.
+arXiv preprint
+arXiv:2308.15363.
+Jiaqi Guo, Zecheng Zhan, Yan Gao, Yan Xiao, Jian-
+Guang Lou, Ting Liu, and Dongmei Zhang. 2019. To-
+wards complex text-to-sql in cross-domain database
+with intermediate representation.
+arXiv: Compu-
+tation and Language,arXiv: Computation and Lan-
+guage.
+Wonseok Hwang, Jinyeung Yim, Seung-Hyun Park, and
+Minjoon Seo. 2019. A comprehensive exploration
+on wikisql with table-aware word contextualization.
+Cornell University - arXiv,Cornell University - arXiv.
+Dongjun Lee, Choongwon Park, Jaehyuk Kim, and
+Heesoo Park. 2024. Mcs-sql: Leveraging multiple
+prompts and multiple-choice selection for text-to-sql
+generation. arXiv preprint arXiv:2405.07467.
+Haoyang Li, Jing Zhang, Hanbing Liu, Ju Fan, Xi-
+aokang Zhang, Jun Zhu, Renjie Wei, Hongyan Pan,
+Cuiping Li, and Hong Chen. 2024a. Codes: Towards
+building open-source language models for text-to-sql.
+Proceedings of the ACM on Management of Data,
+2(3):1–28.
+9
+Jinyang Li, Binyuan Hui, Ge Qu, Jiaxi Yang, Binhua
+Li, Bowen Li, Bailin Wang, Bowen Qin, Ruiying
+Geng, Nan Huo, et al. 2024b. Can llm already serve
+as a database interface? a big bench for large-scale
+database grounded text-to-sqls. Advances in Neural
+Information Processing Systems, 36.
+Mohammadreza Pourreza and Davood Rafiei. 2023.
+Din-sql: Decomposed in-context learning of text-
+to-sql with self-correction. NeurIPS 2023.
+Mohammadreza Pourreza and Davood Rafiei. 2024.
+Dts-sql: Decomposed text-to-sql with small large
+language models. arXiv preprint arXiv:2402.01117.
+Bowen Qin, Binyuan Hui, Lihan Wang, Min Yang,
+Jinyang Li, Binhua Li, Ruiying Geng, Rongyu Cao,
+Jian Sun, Luo Si, et al. 2022. A survey on text-to-sql
+parsing: Concepts, methods, and future directions.
+arXiv preprint arXiv:2208.13629.
+Nitarshan Rajkumar, Raymond Li, and Dzmitry Bah-
+danau. 2022.
+Evaluating the text-to-sql capabil-
+ities of large language models.
+arXiv preprint
+arXiv:2204.00498.
+Ruoxi Sun, Sercan Ö Arik, Alex Muzio, Lesly Miculi-
+cich, Satya Gundabathula, Pengcheng Yin, Hanjun
+Dai, Hootan Nakhost, Rajarishi Sinha, Zifeng Wang,
+et al. 2023.
+Sql-palm: Improved large language
+model adaptation for text-to-sql (extended). arXiv
+preprint arXiv:2306.00739.
+Ilya Sutskever, Oriol Vinyals, and QuocV. Le. 2014. Se-
+quence to sequence learning with neural networks.
+arXiv: Computation and Language,arXiv: Computa-
+tion and Language.
+Chang-You Tai, Ziru Chen, Tianshu Zhang, Xiang Deng,
+and Huan Sun. 2023. Exploring chain-of-thought
+style prompting for text-to-sql.
+arXiv preprint
+arXiv:2305.14215.
+Shayan Talaei, Mohammadreza Pourreza, Yu-Chen
+Chang, Azalia Mirhoseini, and Amin Saberi. 2024.
+Chess: Contextual harnessing for efficient sql synthe-
+sis. arXiv preprint arXiv:2405.16755.
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob
+Uszkoreit, Llion Jones, AidanN. Gomez, Lukasz
+Kaiser, and Illia Polosukhin. 2017.
+Attention is
+all you need. Neural Information Processing Sys-
+tems,Neural Information Processing Systems.
+Bailin Wang, Richard Shin, Xiaodong Liu, Oleksandr
+Polozov, and Matthew Richardson. 2020. Rat-sql:
+Relation-aware schema encoding and linking for text-
+to-sql parsers. In Proceedings of the 58th Annual
+Meeting of the Association for Computational Lin-
+guistics.
+Bing Wang, Changyu Ren, Jian Yang, Xinnian Liang, Ji-
+aqi Bai, Linzheng Chai, Zhao Yan, Qian-Wen Zhang,
+Di Yin, Xing Sun, et al. 2024. Mac-sql: A multi-
+agent collaborative framework for text-to-sql. arXiv
+preprint arXiv:2312.11242.
+Chenglong
+Wang,
+Kedar
+Tatwawadi,
+Marc
+Brockschmidt, Po-Sen Huang, Yi Mao, Olek-
+sandr Polozov, and Rishabh Singh. 2018. Robust
+text-to-sql generation with execution-guided de-
+coding. arXiv: Computation and Language,arXiv:
+Computation and Language.
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten
+Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou,
+et al. 2022. Chain-of-thought prompting elicits rea-
+soning in large language models. Advances in neural
+information processing systems, 35:24824–24837.
+Tomer Wolfson, Daniel Deutch, and Jonathan Be-
+rant. 2021. Weakly supervised text-to-sql parsing
+through question decomposition.
+arXiv preprint
+arXiv:2112.06311.
+Yuanzhen Xie, Xinzhou Jin, Tao Xie, MingXiong Lin,
+Liang Chen, Chenyun Yu, Lei Cheng, ChengXiang
+Zhuo, Bo Hu, and Zang Li. 2024. Decomposition
+for enhancing attention: Improving llm-based text-
+to-sql through workflow paradigm. arXiv preprint
+arXiv:2402.10671.
+Xiaojun Xu, Chang Liu, and Dawn Song. 2017. Sqlnet:
+Generating structured queries from natural language
+without reinforcement learning. Cornell University -
+arXiv,Cornell University - arXiv.
+Deunsol Yoon, Dongbok Lee, and SangKeun Lee. 2018.
+Dynamic self-attention: Computing attention over
+words dynamically for sentence embedding. arXiv:
+Learning,arXiv: Learning.
+Tao Yu, Rui Zhang, Kai Yang, Michihiro Yasunaga,
+Dongxu Wang, Zifan Li, James Ma, Irene Li, Qingn-
+ing Yao, Shanelle Roman, Zilin Zhang, and Dragomir
+Radev. 2018. Spider: A large-scale human-labeled
+dataset for complex and cross-domain semantic pars-
+ing and text-to-sql task. In Proceedings of the 2018
+Conference on Empirical Methods in Natural Lan-
+guage Processing.
+JohnM. Zelle and RaymondJ. Mooney. 1996. Learning
+to parse database queries using inductive logic pro-
+gramming. National Conference on Artificial Intelli-
+gence,National Conference on Artificial Intelligence.
+Victor Zhong, Caiming Xiong, and Richard Socher.
+2017. Seq2sql: Generating structured queries from
+natural language using reinforcement learning. Cor-
+nell University - arXiv,Cornell University - arXiv.
+Denny Zhou, Nathanael Schärli, Le Hou, Jason Wei,
+Nathan Scales, Xuezhi Wang, Dale Schuurmans,
+Claire Cui, Olivier Bousquet, Quoc Le, et al. 2022.
+Least-to-most prompting enables complex reason-
+ing in large language models.
+arXiv preprint
+arXiv:2205.10625.
+10
+A
+Prompts
+A.1
+Prompt of Entity-based Schema Linking
+As an experienced and professional database manager, your task is to analyze a user question
+and a database schema to select relevant information. The database schema consists of
+table descriptions, each containing multiple column descriptions. Your goal is to extract the
+entities from question and identify the relevant tables and columns based on these entities
+and the evidence provided.
+##Instruction:
+1. Extract the mentioned entities from the user question. Make sure all of the entities are
+extracted.
+2. For each entity, keep at least 3 related columns.
+4. Your output should include entity extraction, analysis and related database schema.
+5. The related database schema should be in JSON format.
+6. Each column’s information in provided [Schema] is in this format: (column, description.
+Value examples<optional>)
+##Requirements:
+1. Sort the related columns in each list corresponding to each entity in descending order of
+relevance.
+2. The chosen columns should be in this format: <table.column>.
+3. Make sure each chosen list is not empty. The value [] will be punished.
+4.[Matched values] may contain redundant or useless information in addition to the correct
+matching values, so you need to select the useful information in conjunction with the specific
+column names and descriptions.
+5. An entity may not have a corresponding evidence, which requires you to find the relevant
+columns yourself through your understanding of the database schema.
+Here is a new example, please start answering:
+[DB_ID]
+[Schema]
+[Primary keys]
+[Foreign keys]
+[Question]
+[Evidence]
+[Matched values]
+Since some of the specific values in Question and evidence match the data in the database,
+here are some matches retrieved from the database that may help you in selecting columns
+(You need to ignore matches that are not relevant to the question):
+[Answer]
+Table 5: Instruction of Entity-based Schema Linking
+11
+Figure 10: ICL example of Entity-based Schema Linking
+12
+A.2
+Prompt of Table Summarization
+##instruction
+Given the database schema, you need to summarise the data stored in each table in one
+sentence, based on the name of the table and the columns in the table.
+##Requirements
+- Your output should be in json format
+- The Summary of each table is supposed to be expressed in one sentence
+Here is a new case:
+[DB_ID]
+[Schema]
+[Summary]
+Table 6: Instruction of Table Summarization
+A.3
+Prompt of Targets-Conditions Decomposition
+##Instruction
+Given a [query], you need to understanding the intent of Query, and then deceompose
+it into Targets and Conditions. Then you need to combine Targets and Conditions into
+Subquerys step by step. For the case where Conditions is NULL, consider Targets as the
+final Subquery directly. For the case where Conditions are not NULL, combine Targets
+and the first Condition to get the first Subquery, then combine this Subquery and the next
+Condition into a new Subquery until all Conditions are used (which means the content of the
+last Subquery and the original Query is the same).
+##Requirements
+-Try not to overlap Targets and Conditions.
+-Make sure the decomposed Target and Condition can cover all of the information in Query.
+-Don’t change any information (specific value) in Query!
+-Mark each Subquery with ## in front of it.
+Here is a new query need to be decomposed:
+[Query]
+[Evidence]
+[Decomposition]
+Table 7: Instruction of Decomposition
+13
+Figure 11: ICL examples of Decomposition
+14
+A.4
+Prompt of Sub-SQL Generation
+Given a [Database schema] description, a knowledge [Evidence]and a [Question], you need
+to use valid SQLite and understand the database and knowledge so that you can generate a
+good SQL for the [Question]. When generating SQL, we should always consider constraints:
+[Constraints]
+- In ‘SELECT <column>‘, just select needed columns in the [Question] without any unneces-
+sary column or value
+- In ‘FROM <table>‘ or ‘JOIN <table>‘, do not include unnecessary table
+- If use max or min func, ‘JOIN <table>‘ FIRST, THEN use ‘SELECT MAX(<column>)‘ or
+‘SELECT MIN(<column>)‘
+- If [Value examples] of <column> has ’None’ or None, use ‘JOIN <table>‘ or ‘WHERE
+<column> is NOT NULL‘ is better
+- If use ‘ORDER BY <column> ASC|DESC‘, add ‘GROUP BY <column>‘ before to select
+distinct values
+- If include more than one table, use ‘JOIN <table>‘
+- If use ‘JOIN <table>‘, the connected columns should be in the [Foreign keys]
+- If evidence gives a formula for calculating a value, try to use that formula
+- If use ‘ORDER BY <column> ASC LIMIT <n>‘, please use ‘ORDER BY <column> ASC
+NULLS LAST LIMIT <n>‘ to make sure the null values will not be selected
+[Database schema]
+[Primary keys]
+[Foreign keys]
+[Detailed descriptions of tables and columns]
+[Evidence]
+[Question]
+[Matched values]
+Since some of the specific values in Question and evidence match the data in the database,
+here are some matches retrieved from the database that may help you to generate SQL
+(Matched values may contain useless information and you should ignore matches that are
+not relevant to the question):
+Consider [Constraints], extract hints from [Evidence] if [Evidence] is related to the [Ques-
+tion], select columns from [Database schema] and then generate SQL for [Question], you
+need to think step by step:
+Table 8: Instruction of First-step Generation
+15
+Figure 12: ICL examples of First-step Generation
+16
+Given a [Database schema] description, a knowledge [Evidence]and a [Question], you need
+to use valid SQLite and understand the database and knowledge so that you can generate a
+good SQL for the [Question]. When generating SQL, we should always consider constraints:
+[Constraints]
+- In ‘SELECT <column>‘, just select needed columns in the [Question] without any unneces-
+sary column or value
+- In ‘FROM <table>‘ or ‘JOIN <table>‘, do not include unnecessary table
+- If use max or min func, ‘JOIN <table>‘ FIRST, THEN use ‘SELECT MAX(<column>)‘ or
+‘SELECT MIN(<column>)‘
+- If [Value examples] of <column> has ’None’ or None, use ‘JOIN <table>‘ or ‘WHERE
+<column> is NOT NULL‘ is better
+- If use ‘ORDER BY <column> ASC|DESC‘, add ‘GROUP BY <column>‘ before to select
+distinct values
+- If include more than one table, use ‘JOIN <table>‘
+- If use ‘JOIN <table>‘, the connected columns should be in the [Foreign keys]
+- If evidence gives a formula for calculating a value, try to use that formula
+- If use ‘ORDER BY <column> ASC LIMIT <n>‘, please use ‘ORDER BY <column> ASC
+NULLS LAST LIMIT <n>‘ to make sure the null values will not be selected
+[Database schema]
+[Primary keys]
+[Foreign keys]
+[Detailed descriptions of tables and columns]
+[Evidence]
+[Question]
+[Subquestion]
+[Sub-SQL]
+[Matched values]
+Since some of the specific values in Question and evidence match the data in the database,
+here are some matches retrieved from the database that may help you to generate SQL
+(Matched values may contain useless information and you should ignore matches that are
+not relevant to the question):
+[Subquestion] is decomposed from [Question], now we provide Sub-SQL corresponding
+to Subquestion, you just need to complete the remaining conditions based on Sub-SQL
+to generate SQL for [Question]. Consider [Constraints], extract hints from [Evidence] if
+[Evidence] is related to the [Question], and then generate SQL after thinking step by step:
+Table 9: Instruction of Next-step Generation
+17
+Figure 13: ICL examples of Next-step Generation
+18
+A.5
+Prompt of Sub-SQL Refinement
+[Instruction]
+When executing SQL below, some errors occurred, please fix up SQL based on query and
+database info. Solve the task step by step if you need to. Using SQL format in the code
+block, and indicate script type in the code block. When you find an answer, verify the answer
+carefully. Include verifiable evidence in your response if possible.
+[Constraints]
+- The SQL should start with ’SELECT’
+- In ‘SELECT <column>‘, just select needed columns in the [Question] without any unneces-
+sary column or value
+- In ‘FROM <table>‘ or ‘JOIN <table>‘, do not include unnecessary table
+- If use ‘JOIN <table>‘, the connected columns should be in the Foreign keys of [Database
+schema]
+[Response format]
+Your response should be in this format:
+Analysis:
+**(Your analysis)**
+Correct SQL:
+“‘sql
+(the fixed SQL)
+“‘
+[Attention]
+Only SQL statements are allowed in (the fixed SQL), do not add any comments.
+[Evidence]
+[Query]
+[Database info]
+[Primary keys]
+[Foreign keys]
+[Detailed descriptions of tables and columns]]
+[old SQL]
+[SQLite error]
+[Exception class]
+Now please fixup old SQL and generate new SQL again. [correct SQL]
+Table 10: Zero-shot prompt for general case
+19
+Figure 14: Additional examples for a special case
+20
+B
+Packages List
+Package name
+Version
+openai
+0.28.1
+pandas
+2.2.2
+protobuf
+5.26.1
+sql_metadata
+2.11.0
+sqlparse
+0.5.0
+tiktoken
+0.5.2
+tqdm
+4.66.1
+transformers
+4.40.1
+func_timeout
+4.3.5
+nltk
+3.8.1
+numpy
+1.26.4
+21
