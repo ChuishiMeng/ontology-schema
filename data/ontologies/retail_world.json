@@ -1,0 +1,1210 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "db_id": "retail_world",
+    "created_by": "auto",
+    "stats": {
+      "concepts": 9,
+      "attributes": 42,
+      "relations": 7,
+      "business_rules": 10,
+      "term_dictionary": 3
+    }
+  },
+  "concepts": [
+    {
+      "id": "c_001",
+      "name": "Sqlite Sequence",
+      "name_en": "Sqlite Sequence",
+      "type": "entity",
+      "description": "数据表: sqlite_sequence",
+      "aliases": [
+        "sqlite_sequence",
+        "sqlite sequence"
+      ],
+      "mapped_tables": [
+        "sqlite_sequence"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_002",
+      "name": "Categories",
+      "name_en": "Categories",
+      "type": "entity",
+      "description": "数据表: Categories",
+      "aliases": [
+        "Categories",
+        "categories"
+      ],
+      "mapped_tables": [
+        "Categories"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_003",
+      "name": "Customers",
+      "name_en": "Customers",
+      "type": "entity",
+      "description": "数据表: Customers",
+      "aliases": [
+        "Customers",
+        "customers"
+      ],
+      "mapped_tables": [
+        "Customers"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_004",
+      "name": "Employees",
+      "name_en": "Employees",
+      "type": "entity",
+      "description": "数据表: Employees",
+      "aliases": [
+        "Employees",
+        "employees"
+      ],
+      "mapped_tables": [
+        "Employees"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_005",
+      "name": "Shippers",
+      "name_en": "Shippers",
+      "type": "entity",
+      "description": "数据表: Shippers",
+      "aliases": [
+        "Shippers",
+        "shippers"
+      ],
+      "mapped_tables": [
+        "Shippers"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_006",
+      "name": "Suppliers",
+      "name_en": "Suppliers",
+      "type": "entity",
+      "description": "数据表: Suppliers",
+      "aliases": [
+        "Suppliers",
+        "suppliers"
+      ],
+      "mapped_tables": [
+        "Suppliers"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_007",
+      "name": "Products",
+      "name_en": "Products",
+      "type": "entity",
+      "description": "数据表: Products",
+      "aliases": [
+        "Products",
+        "products"
+      ],
+      "mapped_tables": [
+        "Products"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_008",
+      "name": "Orders",
+      "name_en": "Orders",
+      "type": "entity",
+      "description": "数据表: Orders",
+      "aliases": [
+        "Orders",
+        "orders"
+      ],
+      "mapped_tables": [
+        "Orders"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_009",
+      "name": "Orderdetails",
+      "name_en": "Orderdetails",
+      "type": "entity",
+      "description": "数据表: OrderDetails",
+      "aliases": [
+        "OrderDetails",
+        "orderdetails"
+      ],
+      "mapped_tables": [
+        "OrderDetails"
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "attributes": [
+    {
+      "id": "a_001",
+      "concept_id": "c_002",
+      "name": "CategoryID",
+      "name_en": "CategoryID",
+      "description": "Categories.CategoryID (INTEGER)",
+      "aliases": [
+        "CategoryID",
+        "CategoryID"
+      ],
+      "mapped_columns": [
+        "Categories.CategoryID"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_002",
+      "concept_id": "c_002",
+      "name": "CategoryName",
+      "name_en": "CategoryName",
+      "description": "Categories.CategoryName (TEXT)",
+      "aliases": [
+        "CategoryName",
+        "CategoryName"
+      ],
+      "mapped_columns": [
+        "Categories.CategoryName"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_003",
+      "concept_id": "c_002",
+      "name": "Description",
+      "name_en": "Description",
+      "description": "Categories.Description (TEXT)",
+      "aliases": [
+        "Description",
+        "Description"
+      ],
+      "mapped_columns": [
+        "Categories.Description"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_004",
+      "concept_id": "c_003",
+      "name": "CustomerID",
+      "name_en": "CustomerID",
+      "description": "Customers.CustomerID (INTEGER)",
+      "aliases": [
+        "CustomerID",
+        "CustomerID"
+      ],
+      "mapped_columns": [
+        "Customers.CustomerID"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_005",
+      "concept_id": "c_003",
+      "name": "CustomerName",
+      "name_en": "CustomerName",
+      "description": "Customers.CustomerName (TEXT)",
+      "aliases": [
+        "CustomerName",
+        "CustomerName"
+      ],
+      "mapped_columns": [
+        "Customers.CustomerName"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_006",
+      "concept_id": "c_003",
+      "name": "ContactName",
+      "name_en": "ContactName",
+      "description": "Customers.ContactName (TEXT)",
+      "aliases": [
+        "ContactName",
+        "ContactName"
+      ],
+      "mapped_columns": [
+        "Customers.ContactName"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_007",
+      "concept_id": "c_003",
+      "name": "Address",
+      "name_en": "Address",
+      "description": "Customers.Address (TEXT)",
+      "aliases": [
+        "Address",
+        "Address"
+      ],
+      "mapped_columns": [
+        "Customers.Address"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_008",
+      "concept_id": "c_003",
+      "name": "City",
+      "name_en": "City",
+      "description": "Customers.City (TEXT)",
+      "aliases": [
+        "City",
+        "City"
+      ],
+      "mapped_columns": [
+        "Customers.City"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_009",
+      "concept_id": "c_003",
+      "name": "PostalCode",
+      "name_en": "PostalCode",
+      "description": "Customers.PostalCode (TEXT)",
+      "aliases": [
+        "PostalCode",
+        "PostalCode"
+      ],
+      "mapped_columns": [
+        "Customers.PostalCode"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_010",
+      "concept_id": "c_003",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "Customers.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "Customers.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_011",
+      "concept_id": "c_004",
+      "name": "EmployeeID",
+      "name_en": "EmployeeID",
+      "description": "Employees.EmployeeID (INTEGER)",
+      "aliases": [
+        "EmployeeID",
+        "EmployeeID"
+      ],
+      "mapped_columns": [
+        "Employees.EmployeeID"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_012",
+      "concept_id": "c_004",
+      "name": "LastName",
+      "name_en": "LastName",
+      "description": "Employees.LastName (TEXT)",
+      "aliases": [
+        "LastName",
+        "LastName"
+      ],
+      "mapped_columns": [
+        "Employees.LastName"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_013",
+      "concept_id": "c_004",
+      "name": "FirstName",
+      "name_en": "FirstName",
+      "description": "Employees.FirstName (TEXT)",
+      "aliases": [
+        "FirstName",
+        "FirstName"
+      ],
+      "mapped_columns": [
+        "Employees.FirstName"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_014",
+      "concept_id": "c_004",
+      "name": "BirthDate",
+      "name_en": "BirthDate",
+      "description": "Employees.BirthDate (DATE)",
+      "aliases": [
+        "BirthDate",
+        "BirthDate"
+      ],
+      "mapped_columns": [
+        "Employees.BirthDate"
+      ],
+      "value_mapping": {},
+      "data_type": "DATE",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_015",
+      "concept_id": "c_004",
+      "name": "Photo",
+      "name_en": "Photo",
+      "description": "Employees.Photo (TEXT)",
+      "aliases": [
+        "Photo",
+        "Photo"
+      ],
+      "mapped_columns": [
+        "Employees.Photo"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_016",
+      "concept_id": "c_004",
+      "name": "Notes",
+      "name_en": "Notes",
+      "description": "Employees.Notes (TEXT)",
+      "aliases": [
+        "Notes",
+        "Notes"
+      ],
+      "mapped_columns": [
+        "Employees.Notes"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_017",
+      "concept_id": "c_005",
+      "name": "ShipperID",
+      "name_en": "ShipperID",
+      "description": "Shippers.ShipperID (INTEGER)",
+      "aliases": [
+        "ShipperID",
+        "ShipperID"
+      ],
+      "mapped_columns": [
+        "Shippers.ShipperID"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_018",
+      "concept_id": "c_005",
+      "name": "ShipperName",
+      "name_en": "ShipperName",
+      "description": "Shippers.ShipperName (TEXT)",
+      "aliases": [
+        "ShipperName",
+        "ShipperName"
+      ],
+      "mapped_columns": [
+        "Shippers.ShipperName"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_019",
+      "concept_id": "c_005",
+      "name": "Phone",
+      "name_en": "Phone",
+      "description": "Shippers.Phone (TEXT)",
+      "aliases": [
+        "Phone",
+        "Phone"
+      ],
+      "mapped_columns": [
+        "Shippers.Phone"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_020",
+      "concept_id": "c_006",
+      "name": "SupplierID",
+      "name_en": "SupplierID",
+      "description": "Suppliers.SupplierID (INTEGER)",
+      "aliases": [
+        "SupplierID",
+        "SupplierID"
+      ],
+      "mapped_columns": [
+        "Suppliers.SupplierID"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_021",
+      "concept_id": "c_006",
+      "name": "SupplierName",
+      "name_en": "SupplierName",
+      "description": "Suppliers.SupplierName (TEXT)",
+      "aliases": [
+        "SupplierName",
+        "SupplierName"
+      ],
+      "mapped_columns": [
+        "Suppliers.SupplierName"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_022",
+      "concept_id": "c_006",
+      "name": "ContactName",
+      "name_en": "ContactName",
+      "description": "Suppliers.ContactName (TEXT)",
+      "aliases": [
+        "ContactName",
+        "ContactName"
+      ],
+      "mapped_columns": [
+        "Suppliers.ContactName"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_023",
+      "concept_id": "c_006",
+      "name": "Address",
+      "name_en": "Address",
+      "description": "Suppliers.Address (TEXT)",
+      "aliases": [
+        "Address",
+        "Address"
+      ],
+      "mapped_columns": [
+        "Suppliers.Address"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_024",
+      "concept_id": "c_006",
+      "name": "City",
+      "name_en": "City",
+      "description": "Suppliers.City (TEXT)",
+      "aliases": [
+        "City",
+        "City"
+      ],
+      "mapped_columns": [
+        "Suppliers.City"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_025",
+      "concept_id": "c_006",
+      "name": "PostalCode",
+      "name_en": "PostalCode",
+      "description": "Suppliers.PostalCode (TEXT)",
+      "aliases": [
+        "PostalCode",
+        "PostalCode"
+      ],
+      "mapped_columns": [
+        "Suppliers.PostalCode"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_026",
+      "concept_id": "c_006",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "Suppliers.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "Suppliers.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_027",
+      "concept_id": "c_006",
+      "name": "Phone",
+      "name_en": "Phone",
+      "description": "Suppliers.Phone (TEXT)",
+      "aliases": [
+        "Phone",
+        "Phone"
+      ],
+      "mapped_columns": [
+        "Suppliers.Phone"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_028",
+      "concept_id": "c_007",
+      "name": "ProductID",
+      "name_en": "ProductID",
+      "description": "Products.ProductID (INTEGER)",
+      "aliases": [
+        "ProductID",
+        "ProductID"
+      ],
+      "mapped_columns": [
+        "Products.ProductID"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_029",
+      "concept_id": "c_007",
+      "name": "ProductName",
+      "name_en": "ProductName",
+      "description": "Products.ProductName (TEXT)",
+      "aliases": [
+        "ProductName",
+        "ProductName"
+      ],
+      "mapped_columns": [
+        "Products.ProductName"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_030",
+      "concept_id": "c_007",
+      "name": "SupplierID",
+      "name_en": "SupplierID",
+      "description": "Products.SupplierID (INTEGER)",
+      "aliases": [
+        "SupplierID",
+        "SupplierID"
+      ],
+      "mapped_columns": [
+        "Products.SupplierID"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_031",
+      "concept_id": "c_007",
+      "name": "CategoryID",
+      "name_en": "CategoryID",
+      "description": "Products.CategoryID (INTEGER)",
+      "aliases": [
+        "CategoryID",
+        "CategoryID"
+      ],
+      "mapped_columns": [
+        "Products.CategoryID"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_032",
+      "concept_id": "c_007",
+      "name": "Unit",
+      "name_en": "Unit",
+      "description": "Products.Unit (TEXT)",
+      "aliases": [
+        "Unit",
+        "Unit"
+      ],
+      "mapped_columns": [
+        "Products.Unit"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_033",
+      "concept_id": "c_007",
+      "name": "Price",
+      "name_en": "Price",
+      "description": "Products.Price (REAL)",
+      "aliases": [
+        "Price",
+        "Price"
+      ],
+      "mapped_columns": [
+        "Products.Price"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_034",
+      "concept_id": "c_008",
+      "name": "OrderID",
+      "name_en": "OrderID",
+      "description": "Orders.OrderID (INTEGER)",
+      "aliases": [
+        "OrderID",
+        "OrderID"
+      ],
+      "mapped_columns": [
+        "Orders.OrderID"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_035",
+      "concept_id": "c_008",
+      "name": "CustomerID",
+      "name_en": "CustomerID",
+      "description": "Orders.CustomerID (INTEGER)",
+      "aliases": [
+        "CustomerID",
+        "CustomerID"
+      ],
+      "mapped_columns": [
+        "Orders.CustomerID"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_036",
+      "concept_id": "c_008",
+      "name": "EmployeeID",
+      "name_en": "EmployeeID",
+      "description": "Orders.EmployeeID (INTEGER)",
+      "aliases": [
+        "EmployeeID",
+        "EmployeeID"
+      ],
+      "mapped_columns": [
+        "Orders.EmployeeID"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_037",
+      "concept_id": "c_008",
+      "name": "OrderDate",
+      "name_en": "OrderDate",
+      "description": "Orders.OrderDate (DATETIME)",
+      "aliases": [
+        "OrderDate",
+        "OrderDate"
+      ],
+      "mapped_columns": [
+        "Orders.OrderDate"
+      ],
+      "value_mapping": {},
+      "data_type": "DATETIME",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_038",
+      "concept_id": "c_008",
+      "name": "ShipperID",
+      "name_en": "ShipperID",
+      "description": "Orders.ShipperID (INTEGER)",
+      "aliases": [
+        "ShipperID",
+        "ShipperID"
+      ],
+      "mapped_columns": [
+        "Orders.ShipperID"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_039",
+      "concept_id": "c_009",
+      "name": "OrderDetailID",
+      "name_en": "OrderDetailID",
+      "description": "OrderDetails.OrderDetailID (INTEGER)",
+      "aliases": [
+        "OrderDetailID",
+        "OrderDetailID"
+      ],
+      "mapped_columns": [
+        "OrderDetails.OrderDetailID"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_040",
+      "concept_id": "c_009",
+      "name": "OrderID",
+      "name_en": "OrderID",
+      "description": "OrderDetails.OrderID (INTEGER)",
+      "aliases": [
+        "OrderID",
+        "OrderID"
+      ],
+      "mapped_columns": [
+        "OrderDetails.OrderID"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_041",
+      "concept_id": "c_009",
+      "name": "ProductID",
+      "name_en": "ProductID",
+      "description": "OrderDetails.ProductID (INTEGER)",
+      "aliases": [
+        "ProductID",
+        "ProductID"
+      ],
+      "mapped_columns": [
+        "OrderDetails.ProductID"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_042",
+      "concept_id": "c_009",
+      "name": "Quantity",
+      "name_en": "Quantity",
+      "description": "OrderDetails.Quantity (INTEGER)",
+      "aliases": [
+        "Quantity",
+        "Quantity"
+      ],
+      "mapped_columns": [
+        "OrderDetails.Quantity"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    }
+  ],
+  "relations": [
+    {
+      "id": "r_001",
+      "name": "Products → Categories",
+      "source_concept_id": "c_007",
+      "target_concept_id": "c_002",
+      "description": "FK: Products.CategoryID → Categories.CategoryID",
+      "mapped_joins": [
+        "Products.CategoryID = Categories.CategoryID"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "r_002",
+      "name": "Products → Suppliers",
+      "source_concept_id": "c_007",
+      "target_concept_id": "c_006",
+      "description": "FK: Products.SupplierID → Suppliers.SupplierID",
+      "mapped_joins": [
+        "Products.SupplierID = Suppliers.SupplierID"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "r_003",
+      "name": "Orders → Employees",
+      "source_concept_id": "c_008",
+      "target_concept_id": "c_004",
+      "description": "FK: Orders.EmployeeID → Employees.EmployeeID",
+      "mapped_joins": [
+        "Orders.EmployeeID = Employees.EmployeeID"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "r_004",
+      "name": "Orders → Customers",
+      "source_concept_id": "c_008",
+      "target_concept_id": "c_003",
+      "description": "FK: Orders.CustomerID → Customers.CustomerID",
+      "mapped_joins": [
+        "Orders.CustomerID = Customers.CustomerID"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "r_005",
+      "name": "Orders → Shippers",
+      "source_concept_id": "c_008",
+      "target_concept_id": "c_005",
+      "description": "FK: Orders.ShipperID → Shippers.ShipperID",
+      "mapped_joins": [
+        "Orders.ShipperID = Shippers.ShipperID"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "r_006",
+      "name": "Orderdetails → Orders",
+      "source_concept_id": "c_009",
+      "target_concept_id": "c_008",
+      "description": "FK: OrderDetails.OrderID → Orders.OrderID",
+      "mapped_joins": [
+        "OrderDetails.OrderID = Orders.OrderID"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "r_007",
+      "name": "Orderdetails → Products",
+      "source_concept_id": "c_009",
+      "target_concept_id": "c_007",
+      "description": "FK: OrderDetails.ProductID → Products.ProductID",
+      "mapped_joins": [
+        "OrderDetails.ProductID = Products.ProductID"
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "business_rules": [
+    {
+      "id": "br_001",
+      "name": "company in Spain",
+      "pattern": "company\\ in\\ Spain",
+      "sql_template": "Country = 'Spain'",
+      "description": "Evidence: company in Spain → Country = 'Spain'",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_002",
+      "name": "from 1997 to 1998",
+      "pattern": "from\\ 1997\\ to\\ 1998",
+      "sql_template": "ShippedDate > '1996-1-1' and ShippedDate < '1998-12-31'",
+      "description": "Evidence: from 1997 to 1998 → ShippedDate > '1996-1-1' and ShippedDate < '1998-12-31'",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_003",
+      "name": "average annual amount",
+      "pattern": "average\\ annual\\ amount",
+      "sql_template": "SUM(MULTIPLY(UnitPrice, Quantity, SUBTRACT(1, Discount)))",
+      "description": "Evidence: average annual amount → SUM(MULTIPLY(UnitPrice, Quantity, SUBTRACT(1, Discount)))",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_004",
+      "name": "ordered by ID 10979",
+      "pattern": "ordered\\ by\\ ID\\ 10979",
+      "sql_template": "OrderID = '10979'",
+      "description": "Evidence: ordered by ID 10979 → OrderID = '10979'",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_005",
+      "name": "total payment",
+      "pattern": "total\\ payment",
+      "sql_template": "SUM(MULTIPLY(UnitPrice, Quantity, SUBTRACT(1, Discount)))",
+      "description": "Evidence: total payment → SUM(MULTIPLY(UnitPrice, Quantity, SUBTRACT(1, Discount)))",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_006",
+      "name": "orders to Brazil",
+      "pattern": "orders\\ to\\ Brazil",
+      "sql_template": "ShipCountry = 'Brazil'",
+      "description": "Evidence: orders to Brazil → ShipCountry = 'Brazil'",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_007",
+      "name": "highest salary",
+      "pattern": "highest\\ salary",
+      "sql_template": "max(salary)",
+      "description": "Evidence: highest salary → max(salary)",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_008",
+      "name": "order number 10558",
+      "pattern": "order\\ number\\ 10558",
+      "sql_template": "OrderID = 10558",
+      "description": "Evidence: order number 10558 → OrderID = 10558",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_009",
+      "name": "most total payment",
+      "pattern": "most\\ total\\ payment",
+      "sql_template": "Max(Multiply(Quantity, UnitPrice, Subtract(1, Discount)))",
+      "description": "Evidence: most total payment → Max(Multiply(Quantity, UnitPrice, Subtract(1, Discount)))",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_010",
+      "name": "Japan",
+      "pattern": "Japan",
+      "sql_template": "Country = 'Japan'",
+      "description": "Evidence: Japan → Country = 'Japan'",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    }
+  ],
+  "term_dictionary": [
+    {
+      "id": "td_001",
+      "term": "product supplied",
+      "definition": "ProductName",
+      "sql_expression": "ProductName",
+      "mapped_concept_ids": [],
+      "source": "knowledge_evidence"
+    },
+    {
+      "id": "td_002",
+      "term": "territories",
+      "definition": "TerritoryDescription",
+      "sql_expression": "TerritoryDescription",
+      "mapped_concept_ids": [],
+      "source": "knowledge_evidence"
+    },
+    {
+      "id": "td_003",
+      "term": "names of the products",
+      "definition": "ProductName",
+      "sql_expression": "ProductName",
+      "mapped_concept_ids": [
+        "c_007"
+      ],
+      "source": "knowledge_evidence"
+    }
+  ],
+  "schema_mapping": {
+    "tables": {
+      "sqlite_sequence": {
+        "concept_id": "c_001",
+        "description": "表: sqlite_sequence",
+        "key_columns": []
+      },
+      "Categories": {
+        "concept_id": "c_002",
+        "description": "表: Categories",
+        "key_columns": [
+          "CategoryID"
+        ]
+      },
+      "Customers": {
+        "concept_id": "c_003",
+        "description": "表: Customers",
+        "key_columns": [
+          "CustomerID"
+        ]
+      },
+      "Employees": {
+        "concept_id": "c_004",
+        "description": "表: Employees",
+        "key_columns": [
+          "EmployeeID"
+        ]
+      },
+      "Shippers": {
+        "concept_id": "c_005",
+        "description": "表: Shippers",
+        "key_columns": [
+          "ShipperID"
+        ]
+      },
+      "Suppliers": {
+        "concept_id": "c_006",
+        "description": "表: Suppliers",
+        "key_columns": [
+          "SupplierID"
+        ]
+      },
+      "Products": {
+        "concept_id": "c_007",
+        "description": "表: Products",
+        "key_columns": [
+          "ProductID"
+        ]
+      },
+      "Orders": {
+        "concept_id": "c_008",
+        "description": "表: Orders",
+        "key_columns": [
+          "OrderID"
+        ]
+      },
+      "OrderDetails": {
+        "concept_id": "c_009",
+        "description": "表: OrderDetails",
+        "key_columns": [
+          "OrderDetailID"
+        ]
+      }
+    },
+    "foreign_keys": [
+      {
+        "from": "Products.CategoryID",
+        "to": "Categories.CategoryID",
+        "relation_id": "r_001"
+      },
+      {
+        "from": "Products.SupplierID",
+        "to": "Suppliers.SupplierID",
+        "relation_id": "r_002"
+      },
+      {
+        "from": "Orders.EmployeeID",
+        "to": "Employees.EmployeeID",
+        "relation_id": "r_003"
+      },
+      {
+        "from": "Orders.CustomerID",
+        "to": "Customers.CustomerID",
+        "relation_id": "r_004"
+      },
+      {
+        "from": "Orders.ShipperID",
+        "to": "Shippers.ShipperID",
+        "relation_id": "r_005"
+      },
+      {
+        "from": "OrderDetails.OrderID",
+        "to": "Orders.OrderID",
+        "relation_id": "r_006"
+      },
+      {
+        "from": "OrderDetails.ProductID",
+        "to": "Products.ProductID",
+        "relation_id": "r_007"
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Ontology-Schema 联合召回框架 - Ontology 结构定义",
+    "db_id": "示例",
+    "created_by": "auto+human",
+    "created_at": "2026-04-17"
+  },
+
+  "concepts": [
+    {
+      "id": "c_001",
+      "name": "客户",
+      "name_en": "Customer",
+      "type": "entity",
+      "description": "购买产品或使用服务的个人或组织",
+      "aliases": ["用户", "消费者", "买家", "customer", "client"],
+      "mapped_tables": ["customers", "users"],
+      "confidence": 1.0
+    }
+  ],
+
+  "attributes": [
+    {
+      "id": "a_001",
+      "concept_id": "c_001",
+      "name": "客户等级",
+      "name_en": "Customer Level",
+      "description": "客户的会员等级分类",
+      "aliases": ["金牌会员", "银卡", "VIP", "member level"],
+      "mapped_columns": ["customers.level", "customers.member_tier"],
+      "value_mapping": {
+        "金牌会员": "level = 'gold'",
+        "银卡会员": "level = 'silver'",
+        "VIP": "level IN ('gold', 'platinum')"
+      },
+      "confidence": 1.0
+    }
+  ],
+
+  "relations": [
+    {
+      "id": "r_001",
+      "name": "购买",
+      "name_en": "Purchases",
+      "source_concept_id": "c_001",
+      "target_concept_id": "c_002",
+      "description": "客户购买产品",
+      "mapped_joins": ["orders.customer_id = customers.id"],
+      "confidence": 1.0
+    }
+  ],
+
+  "business_rules": [
+    {
+      "id": "br_001",
+      "name": "高价值客户判定",
+      "pattern": "高价值|高消费|重要客户",
+      "sql_template": "SUM(amount) > 10000 OR order_count > 50",
+      "description": "累计消费超过10000或订单超过50单",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    }
+  ],
+
+  "term_dictionary": [
+    {
+      "term": "客单价",
+      "definition": "平均每笔订单的金额",
+      "sql_expression": "SUM(amount) / COUNT(DISTINCT order_id)",
+      "mapped_concept_ids": ["c_001", "c_002"],
+      "source": "knowledge_evidence"
+    }
+  ],
+
+  "schema_mapping": {
+    "tables": {
+      "customers": {
+        "concept_id": "c_001",
+        "description": "客户基本信息表",
+        "key_columns": ["id", "name", "level", "email"]
+      }
+    },
+    "foreign_keys": [
+      {
+        "from": "orders.customer_id",
+        "to": "customers.id",
+        "relation_id": "r_001"
+      }
+    ]
+  }
+}

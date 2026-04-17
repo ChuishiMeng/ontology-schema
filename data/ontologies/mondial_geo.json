@@ -1,0 +1,3280 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "db_id": "mondial_geo",
+    "created_by": "auto",
+    "stats": {
+      "concepts": 34,
+      "attributes": 139,
+      "relations": 0,
+      "business_rules": 0,
+      "term_dictionary": 5
+    }
+  },
+  "concepts": [
+    {
+      "id": "c_001",
+      "name": "Borders",
+      "name_en": "Borders",
+      "type": "entity",
+      "description": "数据表: borders",
+      "aliases": [
+        "borders",
+        "borders"
+      ],
+      "mapped_tables": [
+        "borders"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_002",
+      "name": "City",
+      "name_en": "City",
+      "type": "entity",
+      "description": "数据表: city",
+      "aliases": [
+        "city",
+        "city"
+      ],
+      "mapped_tables": [
+        "city"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_003",
+      "name": "Continent",
+      "name_en": "Continent",
+      "type": "entity",
+      "description": "数据表: continent",
+      "aliases": [
+        "continent",
+        "continent"
+      ],
+      "mapped_tables": [
+        "continent"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_004",
+      "name": "Country",
+      "name_en": "Country",
+      "type": "entity",
+      "description": "数据表: country",
+      "aliases": [
+        "country",
+        "country"
+      ],
+      "mapped_tables": [
+        "country"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_005",
+      "name": "Desert",
+      "name_en": "Desert",
+      "type": "entity",
+      "description": "数据表: desert",
+      "aliases": [
+        "desert",
+        "desert"
+      ],
+      "mapped_tables": [
+        "desert"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_006",
+      "name": "Economy",
+      "name_en": "Economy",
+      "type": "entity",
+      "description": "数据表: economy",
+      "aliases": [
+        "economy",
+        "economy"
+      ],
+      "mapped_tables": [
+        "economy"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_007",
+      "name": "Encompasses",
+      "name_en": "Encompasses",
+      "type": "entity",
+      "description": "数据表: encompasses",
+      "aliases": [
+        "encompasses",
+        "encompasses"
+      ],
+      "mapped_tables": [
+        "encompasses"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_008",
+      "name": "Ethnicgroup",
+      "name_en": "Ethnicgroup",
+      "type": "entity",
+      "description": "数据表: ethnicGroup",
+      "aliases": [
+        "ethnicGroup",
+        "ethnicgroup"
+      ],
+      "mapped_tables": [
+        "ethnicGroup"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_009",
+      "name": "Geo Desert",
+      "name_en": "Geo Desert",
+      "type": "entity",
+      "description": "数据表: geo_desert",
+      "aliases": [
+        "geo_desert",
+        "geo desert"
+      ],
+      "mapped_tables": [
+        "geo_desert"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_010",
+      "name": "Geo Estuary",
+      "name_en": "Geo Estuary",
+      "type": "entity",
+      "description": "数据表: geo_estuary",
+      "aliases": [
+        "geo_estuary",
+        "geo estuary"
+      ],
+      "mapped_tables": [
+        "geo_estuary"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_011",
+      "name": "Geo Island",
+      "name_en": "Geo Island",
+      "type": "entity",
+      "description": "数据表: geo_island",
+      "aliases": [
+        "geo_island",
+        "geo island"
+      ],
+      "mapped_tables": [
+        "geo_island"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_012",
+      "name": "Geo Lake",
+      "name_en": "Geo Lake",
+      "type": "entity",
+      "description": "数据表: geo_lake",
+      "aliases": [
+        "geo_lake",
+        "geo lake"
+      ],
+      "mapped_tables": [
+        "geo_lake"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_013",
+      "name": "Geo Mountain",
+      "name_en": "Geo Mountain",
+      "type": "entity",
+      "description": "数据表: geo_mountain",
+      "aliases": [
+        "geo_mountain",
+        "geo mountain"
+      ],
+      "mapped_tables": [
+        "geo_mountain"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_014",
+      "name": "Geo River",
+      "name_en": "Geo River",
+      "type": "entity",
+      "description": "数据表: geo_river",
+      "aliases": [
+        "geo_river",
+        "geo river"
+      ],
+      "mapped_tables": [
+        "geo_river"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_015",
+      "name": "Geo Sea",
+      "name_en": "Geo Sea",
+      "type": "entity",
+      "description": "数据表: geo_sea",
+      "aliases": [
+        "geo_sea",
+        "geo sea"
+      ],
+      "mapped_tables": [
+        "geo_sea"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_016",
+      "name": "Geo Source",
+      "name_en": "Geo Source",
+      "type": "entity",
+      "description": "数据表: geo_source",
+      "aliases": [
+        "geo_source",
+        "geo source"
+      ],
+      "mapped_tables": [
+        "geo_source"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_017",
+      "name": "Island",
+      "name_en": "Island",
+      "type": "entity",
+      "description": "数据表: island",
+      "aliases": [
+        "island",
+        "island"
+      ],
+      "mapped_tables": [
+        "island"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_018",
+      "name": "Islandin",
+      "name_en": "Islandin",
+      "type": "entity",
+      "description": "数据表: islandIn",
+      "aliases": [
+        "islandIn",
+        "islandin"
+      ],
+      "mapped_tables": [
+        "islandIn"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_019",
+      "name": "Ismember",
+      "name_en": "Ismember",
+      "type": "entity",
+      "description": "数据表: isMember",
+      "aliases": [
+        "isMember",
+        "ismember"
+      ],
+      "mapped_tables": [
+        "isMember"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_020",
+      "name": "Lake",
+      "name_en": "Lake",
+      "type": "entity",
+      "description": "数据表: lake",
+      "aliases": [
+        "lake",
+        "lake"
+      ],
+      "mapped_tables": [
+        "lake"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_021",
+      "name": "Language",
+      "name_en": "Language",
+      "type": "entity",
+      "description": "数据表: language",
+      "aliases": [
+        "language",
+        "language"
+      ],
+      "mapped_tables": [
+        "language"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_022",
+      "name": "Located",
+      "name_en": "Located",
+      "type": "entity",
+      "description": "数据表: located",
+      "aliases": [
+        "located",
+        "located"
+      ],
+      "mapped_tables": [
+        "located"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_023",
+      "name": "Locatedon",
+      "name_en": "Locatedon",
+      "type": "entity",
+      "description": "数据表: locatedOn",
+      "aliases": [
+        "locatedOn",
+        "locatedon"
+      ],
+      "mapped_tables": [
+        "locatedOn"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_024",
+      "name": "Mergeswith",
+      "name_en": "Mergeswith",
+      "type": "entity",
+      "description": "数据表: mergesWith",
+      "aliases": [
+        "mergesWith",
+        "mergeswith"
+      ],
+      "mapped_tables": [
+        "mergesWith"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_025",
+      "name": "Mountain",
+      "name_en": "Mountain",
+      "type": "entity",
+      "description": "数据表: mountain",
+      "aliases": [
+        "mountain",
+        "mountain"
+      ],
+      "mapped_tables": [
+        "mountain"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_026",
+      "name": "Mountainonisland",
+      "name_en": "Mountainonisland",
+      "type": "entity",
+      "description": "数据表: mountainOnIsland",
+      "aliases": [
+        "mountainOnIsland",
+        "mountainonisland"
+      ],
+      "mapped_tables": [
+        "mountainOnIsland"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_027",
+      "name": "Organization",
+      "name_en": "Organization",
+      "type": "entity",
+      "description": "数据表: organization",
+      "aliases": [
+        "organization",
+        "organization"
+      ],
+      "mapped_tables": [
+        "organization"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_028",
+      "name": "Politics",
+      "name_en": "Politics",
+      "type": "entity",
+      "description": "数据表: politics",
+      "aliases": [
+        "politics",
+        "politics"
+      ],
+      "mapped_tables": [
+        "politics"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_029",
+      "name": "Population",
+      "name_en": "Population",
+      "type": "entity",
+      "description": "数据表: population",
+      "aliases": [
+        "population",
+        "population"
+      ],
+      "mapped_tables": [
+        "population"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_030",
+      "name": "Province",
+      "name_en": "Province",
+      "type": "entity",
+      "description": "数据表: province",
+      "aliases": [
+        "province",
+        "province"
+      ],
+      "mapped_tables": [
+        "province"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_031",
+      "name": "Religion",
+      "name_en": "Religion",
+      "type": "entity",
+      "description": "数据表: religion",
+      "aliases": [
+        "religion",
+        "religion"
+      ],
+      "mapped_tables": [
+        "religion"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_032",
+      "name": "River",
+      "name_en": "River",
+      "type": "entity",
+      "description": "数据表: river",
+      "aliases": [
+        "river",
+        "river"
+      ],
+      "mapped_tables": [
+        "river"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_033",
+      "name": "Sea",
+      "name_en": "Sea",
+      "type": "entity",
+      "description": "数据表: sea",
+      "aliases": [
+        "sea",
+        "sea"
+      ],
+      "mapped_tables": [
+        "sea"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_034",
+      "name": "Target",
+      "name_en": "Target",
+      "type": "entity",
+      "description": "数据表: target",
+      "aliases": [
+        "target",
+        "target"
+      ],
+      "mapped_tables": [
+        "target"
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "attributes": [
+    {
+      "id": "a_001",
+      "concept_id": "c_001",
+      "name": "Country1",
+      "name_en": "Country1",
+      "description": "borders.Country1 (TEXT)",
+      "aliases": [
+        "Country1",
+        "Country1"
+      ],
+      "mapped_columns": [
+        "borders.Country1"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_002",
+      "concept_id": "c_001",
+      "name": "Country2",
+      "name_en": "Country2",
+      "description": "borders.Country2 (TEXT)",
+      "aliases": [
+        "Country2",
+        "Country2"
+      ],
+      "mapped_columns": [
+        "borders.Country2"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_003",
+      "concept_id": "c_001",
+      "name": "Length",
+      "name_en": "Length",
+      "description": "borders.Length (REAL)",
+      "aliases": [
+        "Length",
+        "Length"
+      ],
+      "mapped_columns": [
+        "borders.Length"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_004",
+      "concept_id": "c_002",
+      "name": "Name",
+      "name_en": "Name",
+      "description": "city.Name (TEXT)",
+      "aliases": [
+        "Name",
+        "Name"
+      ],
+      "mapped_columns": [
+        "city.Name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_005",
+      "concept_id": "c_002",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "city.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "city.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_006",
+      "concept_id": "c_002",
+      "name": "Province",
+      "name_en": "Province",
+      "description": "city.Province (TEXT)",
+      "aliases": [
+        "Province",
+        "Province"
+      ],
+      "mapped_columns": [
+        "city.Province"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_007",
+      "concept_id": "c_002",
+      "name": "Population",
+      "name_en": "Population",
+      "description": "city.Population (INTEGER)",
+      "aliases": [
+        "Population",
+        "Population"
+      ],
+      "mapped_columns": [
+        "city.Population"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_008",
+      "concept_id": "c_002",
+      "name": "Longitude",
+      "name_en": "Longitude",
+      "description": "city.Longitude (REAL)",
+      "aliases": [
+        "Longitude",
+        "Longitude"
+      ],
+      "mapped_columns": [
+        "city.Longitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_009",
+      "concept_id": "c_002",
+      "name": "Latitude",
+      "name_en": "Latitude",
+      "description": "city.Latitude (REAL)",
+      "aliases": [
+        "Latitude",
+        "Latitude"
+      ],
+      "mapped_columns": [
+        "city.Latitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_010",
+      "concept_id": "c_003",
+      "name": "Name",
+      "name_en": "Name",
+      "description": "continent.Name (TEXT)",
+      "aliases": [
+        "Name",
+        "Name"
+      ],
+      "mapped_columns": [
+        "continent.Name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_011",
+      "concept_id": "c_003",
+      "name": "Area",
+      "name_en": "Area",
+      "description": "continent.Area (REAL)",
+      "aliases": [
+        "Area",
+        "Area"
+      ],
+      "mapped_columns": [
+        "continent.Area"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_012",
+      "concept_id": "c_004",
+      "name": "Name",
+      "name_en": "Name",
+      "description": "country.Name (TEXT)",
+      "aliases": [
+        "Name",
+        "Name"
+      ],
+      "mapped_columns": [
+        "country.Name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_013",
+      "concept_id": "c_004",
+      "name": "Code",
+      "name_en": "Code",
+      "description": "country.Code (TEXT)",
+      "aliases": [
+        "Code",
+        "Code"
+      ],
+      "mapped_columns": [
+        "country.Code"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_014",
+      "concept_id": "c_004",
+      "name": "Capital",
+      "name_en": "Capital",
+      "description": "country.Capital (TEXT)",
+      "aliases": [
+        "Capital",
+        "Capital"
+      ],
+      "mapped_columns": [
+        "country.Capital"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_015",
+      "concept_id": "c_004",
+      "name": "Province",
+      "name_en": "Province",
+      "description": "country.Province (TEXT)",
+      "aliases": [
+        "Province",
+        "Province"
+      ],
+      "mapped_columns": [
+        "country.Province"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_016",
+      "concept_id": "c_004",
+      "name": "Area",
+      "name_en": "Area",
+      "description": "country.Area (REAL)",
+      "aliases": [
+        "Area",
+        "Area"
+      ],
+      "mapped_columns": [
+        "country.Area"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_017",
+      "concept_id": "c_004",
+      "name": "Population",
+      "name_en": "Population",
+      "description": "country.Population (INTEGER)",
+      "aliases": [
+        "Population",
+        "Population"
+      ],
+      "mapped_columns": [
+        "country.Population"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_018",
+      "concept_id": "c_005",
+      "name": "Name",
+      "name_en": "Name",
+      "description": "desert.Name (TEXT)",
+      "aliases": [
+        "Name",
+        "Name"
+      ],
+      "mapped_columns": [
+        "desert.Name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_019",
+      "concept_id": "c_005",
+      "name": "Area",
+      "name_en": "Area",
+      "description": "desert.Area (REAL)",
+      "aliases": [
+        "Area",
+        "Area"
+      ],
+      "mapped_columns": [
+        "desert.Area"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_020",
+      "concept_id": "c_005",
+      "name": "Longitude",
+      "name_en": "Longitude",
+      "description": "desert.Longitude (REAL)",
+      "aliases": [
+        "Longitude",
+        "Longitude"
+      ],
+      "mapped_columns": [
+        "desert.Longitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_021",
+      "concept_id": "c_005",
+      "name": "Latitude",
+      "name_en": "Latitude",
+      "description": "desert.Latitude (REAL)",
+      "aliases": [
+        "Latitude",
+        "Latitude"
+      ],
+      "mapped_columns": [
+        "desert.Latitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_022",
+      "concept_id": "c_006",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "economy.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "economy.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_023",
+      "concept_id": "c_006",
+      "name": "GDP",
+      "name_en": "GDP",
+      "description": "economy.GDP (REAL)",
+      "aliases": [
+        "GDP",
+        "GDP"
+      ],
+      "mapped_columns": [
+        "economy.GDP"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_024",
+      "concept_id": "c_006",
+      "name": "Agriculture",
+      "name_en": "Agriculture",
+      "description": "economy.Agriculture (REAL)",
+      "aliases": [
+        "Agriculture",
+        "Agriculture"
+      ],
+      "mapped_columns": [
+        "economy.Agriculture"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_025",
+      "concept_id": "c_006",
+      "name": "Service",
+      "name_en": "Service",
+      "description": "economy.Service (REAL)",
+      "aliases": [
+        "Service",
+        "Service"
+      ],
+      "mapped_columns": [
+        "economy.Service"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_026",
+      "concept_id": "c_006",
+      "name": "Industry",
+      "name_en": "Industry",
+      "description": "economy.Industry (REAL)",
+      "aliases": [
+        "Industry",
+        "Industry"
+      ],
+      "mapped_columns": [
+        "economy.Industry"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_027",
+      "concept_id": "c_006",
+      "name": "Inflation",
+      "name_en": "Inflation",
+      "description": "economy.Inflation (REAL)",
+      "aliases": [
+        "Inflation",
+        "Inflation"
+      ],
+      "mapped_columns": [
+        "economy.Inflation"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_028",
+      "concept_id": "c_007",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "encompasses.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "encompasses.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_029",
+      "concept_id": "c_007",
+      "name": "Continent",
+      "name_en": "Continent",
+      "description": "encompasses.Continent (TEXT)",
+      "aliases": [
+        "Continent",
+        "Continent"
+      ],
+      "mapped_columns": [
+        "encompasses.Continent"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_030",
+      "concept_id": "c_007",
+      "name": "Percentage",
+      "name_en": "Percentage",
+      "description": "encompasses.Percentage (REAL)",
+      "aliases": [
+        "Percentage",
+        "Percentage"
+      ],
+      "mapped_columns": [
+        "encompasses.Percentage"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_031",
+      "concept_id": "c_008",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "ethnicGroup.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "ethnicGroup.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_032",
+      "concept_id": "c_008",
+      "name": "Name",
+      "name_en": "Name",
+      "description": "ethnicGroup.Name (TEXT)",
+      "aliases": [
+        "Name",
+        "Name"
+      ],
+      "mapped_columns": [
+        "ethnicGroup.Name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_033",
+      "concept_id": "c_008",
+      "name": "Percentage",
+      "name_en": "Percentage",
+      "description": "ethnicGroup.Percentage (REAL)",
+      "aliases": [
+        "Percentage",
+        "Percentage"
+      ],
+      "mapped_columns": [
+        "ethnicGroup.Percentage"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_034",
+      "concept_id": "c_009",
+      "name": "Desert",
+      "name_en": "Desert",
+      "description": "geo_desert.Desert (TEXT)",
+      "aliases": [
+        "Desert",
+        "Desert"
+      ],
+      "mapped_columns": [
+        "geo_desert.Desert"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_035",
+      "concept_id": "c_009",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "geo_desert.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "geo_desert.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_036",
+      "concept_id": "c_009",
+      "name": "Province",
+      "name_en": "Province",
+      "description": "geo_desert.Province (TEXT)",
+      "aliases": [
+        "Province",
+        "Province"
+      ],
+      "mapped_columns": [
+        "geo_desert.Province"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_037",
+      "concept_id": "c_010",
+      "name": "River",
+      "name_en": "River",
+      "description": "geo_estuary.River (TEXT)",
+      "aliases": [
+        "River",
+        "River"
+      ],
+      "mapped_columns": [
+        "geo_estuary.River"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_038",
+      "concept_id": "c_010",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "geo_estuary.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "geo_estuary.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_039",
+      "concept_id": "c_010",
+      "name": "Province",
+      "name_en": "Province",
+      "description": "geo_estuary.Province (TEXT)",
+      "aliases": [
+        "Province",
+        "Province"
+      ],
+      "mapped_columns": [
+        "geo_estuary.Province"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_040",
+      "concept_id": "c_011",
+      "name": "Island",
+      "name_en": "Island",
+      "description": "geo_island.Island (TEXT)",
+      "aliases": [
+        "Island",
+        "Island"
+      ],
+      "mapped_columns": [
+        "geo_island.Island"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_041",
+      "concept_id": "c_011",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "geo_island.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "geo_island.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_042",
+      "concept_id": "c_011",
+      "name": "Province",
+      "name_en": "Province",
+      "description": "geo_island.Province (TEXT)",
+      "aliases": [
+        "Province",
+        "Province"
+      ],
+      "mapped_columns": [
+        "geo_island.Province"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_043",
+      "concept_id": "c_012",
+      "name": "Lake",
+      "name_en": "Lake",
+      "description": "geo_lake.Lake (TEXT)",
+      "aliases": [
+        "Lake",
+        "Lake"
+      ],
+      "mapped_columns": [
+        "geo_lake.Lake"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_044",
+      "concept_id": "c_012",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "geo_lake.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "geo_lake.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_045",
+      "concept_id": "c_012",
+      "name": "Province",
+      "name_en": "Province",
+      "description": "geo_lake.Province (TEXT)",
+      "aliases": [
+        "Province",
+        "Province"
+      ],
+      "mapped_columns": [
+        "geo_lake.Province"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_046",
+      "concept_id": "c_013",
+      "name": "Mountain",
+      "name_en": "Mountain",
+      "description": "geo_mountain.Mountain (TEXT)",
+      "aliases": [
+        "Mountain",
+        "Mountain"
+      ],
+      "mapped_columns": [
+        "geo_mountain.Mountain"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_047",
+      "concept_id": "c_013",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "geo_mountain.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "geo_mountain.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_048",
+      "concept_id": "c_013",
+      "name": "Province",
+      "name_en": "Province",
+      "description": "geo_mountain.Province (TEXT)",
+      "aliases": [
+        "Province",
+        "Province"
+      ],
+      "mapped_columns": [
+        "geo_mountain.Province"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_049",
+      "concept_id": "c_014",
+      "name": "River",
+      "name_en": "River",
+      "description": "geo_river.River (TEXT)",
+      "aliases": [
+        "River",
+        "River"
+      ],
+      "mapped_columns": [
+        "geo_river.River"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_050",
+      "concept_id": "c_014",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "geo_river.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "geo_river.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_051",
+      "concept_id": "c_014",
+      "name": "Province",
+      "name_en": "Province",
+      "description": "geo_river.Province (TEXT)",
+      "aliases": [
+        "Province",
+        "Province"
+      ],
+      "mapped_columns": [
+        "geo_river.Province"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_052",
+      "concept_id": "c_015",
+      "name": "Sea",
+      "name_en": "Sea",
+      "description": "geo_sea.Sea (TEXT)",
+      "aliases": [
+        "Sea",
+        "Sea"
+      ],
+      "mapped_columns": [
+        "geo_sea.Sea"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_053",
+      "concept_id": "c_015",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "geo_sea.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "geo_sea.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_054",
+      "concept_id": "c_015",
+      "name": "Province",
+      "name_en": "Province",
+      "description": "geo_sea.Province (TEXT)",
+      "aliases": [
+        "Province",
+        "Province"
+      ],
+      "mapped_columns": [
+        "geo_sea.Province"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_055",
+      "concept_id": "c_016",
+      "name": "River",
+      "name_en": "River",
+      "description": "geo_source.River (TEXT)",
+      "aliases": [
+        "River",
+        "River"
+      ],
+      "mapped_columns": [
+        "geo_source.River"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_056",
+      "concept_id": "c_016",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "geo_source.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "geo_source.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_057",
+      "concept_id": "c_016",
+      "name": "Province",
+      "name_en": "Province",
+      "description": "geo_source.Province (TEXT)",
+      "aliases": [
+        "Province",
+        "Province"
+      ],
+      "mapped_columns": [
+        "geo_source.Province"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_058",
+      "concept_id": "c_017",
+      "name": "Name",
+      "name_en": "Name",
+      "description": "island.Name (TEXT)",
+      "aliases": [
+        "Name",
+        "Name"
+      ],
+      "mapped_columns": [
+        "island.Name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_059",
+      "concept_id": "c_017",
+      "name": "Islands",
+      "name_en": "Islands",
+      "description": "island.Islands (TEXT)",
+      "aliases": [
+        "Islands",
+        "Islands"
+      ],
+      "mapped_columns": [
+        "island.Islands"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_060",
+      "concept_id": "c_017",
+      "name": "Area",
+      "name_en": "Area",
+      "description": "island.Area (REAL)",
+      "aliases": [
+        "Area",
+        "Area"
+      ],
+      "mapped_columns": [
+        "island.Area"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_061",
+      "concept_id": "c_017",
+      "name": "Height",
+      "name_en": "Height",
+      "description": "island.Height (REAL)",
+      "aliases": [
+        "Height",
+        "Height"
+      ],
+      "mapped_columns": [
+        "island.Height"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_062",
+      "concept_id": "c_017",
+      "name": "Type",
+      "name_en": "Type",
+      "description": "island.Type (TEXT)",
+      "aliases": [
+        "Type",
+        "Type"
+      ],
+      "mapped_columns": [
+        "island.Type"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_063",
+      "concept_id": "c_017",
+      "name": "Longitude",
+      "name_en": "Longitude",
+      "description": "island.Longitude (REAL)",
+      "aliases": [
+        "Longitude",
+        "Longitude"
+      ],
+      "mapped_columns": [
+        "island.Longitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_064",
+      "concept_id": "c_017",
+      "name": "Latitude",
+      "name_en": "Latitude",
+      "description": "island.Latitude (REAL)",
+      "aliases": [
+        "Latitude",
+        "Latitude"
+      ],
+      "mapped_columns": [
+        "island.Latitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_065",
+      "concept_id": "c_018",
+      "name": "Island",
+      "name_en": "Island",
+      "description": "islandIn.Island (TEXT)",
+      "aliases": [
+        "Island",
+        "Island"
+      ],
+      "mapped_columns": [
+        "islandIn.Island"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_066",
+      "concept_id": "c_018",
+      "name": "Sea",
+      "name_en": "Sea",
+      "description": "islandIn.Sea (TEXT)",
+      "aliases": [
+        "Sea",
+        "Sea"
+      ],
+      "mapped_columns": [
+        "islandIn.Sea"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_067",
+      "concept_id": "c_018",
+      "name": "Lake",
+      "name_en": "Lake",
+      "description": "islandIn.Lake (TEXT)",
+      "aliases": [
+        "Lake",
+        "Lake"
+      ],
+      "mapped_columns": [
+        "islandIn.Lake"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_068",
+      "concept_id": "c_018",
+      "name": "River",
+      "name_en": "River",
+      "description": "islandIn.River (TEXT)",
+      "aliases": [
+        "River",
+        "River"
+      ],
+      "mapped_columns": [
+        "islandIn.River"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_069",
+      "concept_id": "c_019",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "isMember.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "isMember.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_070",
+      "concept_id": "c_019",
+      "name": "Organization",
+      "name_en": "Organization",
+      "description": "isMember.Organization (TEXT)",
+      "aliases": [
+        "Organization",
+        "Organization"
+      ],
+      "mapped_columns": [
+        "isMember.Organization"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_071",
+      "concept_id": "c_019",
+      "name": "Type",
+      "name_en": "Type",
+      "description": "isMember.Type (TEXT)",
+      "aliases": [
+        "Type",
+        "Type"
+      ],
+      "mapped_columns": [
+        "isMember.Type"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_072",
+      "concept_id": "c_020",
+      "name": "Name",
+      "name_en": "Name",
+      "description": "lake.Name (TEXT)",
+      "aliases": [
+        "Name",
+        "Name"
+      ],
+      "mapped_columns": [
+        "lake.Name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_073",
+      "concept_id": "c_020",
+      "name": "Area",
+      "name_en": "Area",
+      "description": "lake.Area (REAL)",
+      "aliases": [
+        "Area",
+        "Area"
+      ],
+      "mapped_columns": [
+        "lake.Area"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_074",
+      "concept_id": "c_020",
+      "name": "Depth",
+      "name_en": "Depth",
+      "description": "lake.Depth (REAL)",
+      "aliases": [
+        "Depth",
+        "Depth"
+      ],
+      "mapped_columns": [
+        "lake.Depth"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_075",
+      "concept_id": "c_020",
+      "name": "Altitude",
+      "name_en": "Altitude",
+      "description": "lake.Altitude (REAL)",
+      "aliases": [
+        "Altitude",
+        "Altitude"
+      ],
+      "mapped_columns": [
+        "lake.Altitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_076",
+      "concept_id": "c_020",
+      "name": "Type",
+      "name_en": "Type",
+      "description": "lake.Type (TEXT)",
+      "aliases": [
+        "Type",
+        "Type"
+      ],
+      "mapped_columns": [
+        "lake.Type"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_077",
+      "concept_id": "c_020",
+      "name": "River",
+      "name_en": "River",
+      "description": "lake.River (TEXT)",
+      "aliases": [
+        "River",
+        "River"
+      ],
+      "mapped_columns": [
+        "lake.River"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_078",
+      "concept_id": "c_020",
+      "name": "Longitude",
+      "name_en": "Longitude",
+      "description": "lake.Longitude (REAL)",
+      "aliases": [
+        "Longitude",
+        "Longitude"
+      ],
+      "mapped_columns": [
+        "lake.Longitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_079",
+      "concept_id": "c_020",
+      "name": "Latitude",
+      "name_en": "Latitude",
+      "description": "lake.Latitude (REAL)",
+      "aliases": [
+        "Latitude",
+        "Latitude"
+      ],
+      "mapped_columns": [
+        "lake.Latitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_080",
+      "concept_id": "c_021",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "language.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "language.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_081",
+      "concept_id": "c_021",
+      "name": "Name",
+      "name_en": "Name",
+      "description": "language.Name (TEXT)",
+      "aliases": [
+        "Name",
+        "Name"
+      ],
+      "mapped_columns": [
+        "language.Name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_082",
+      "concept_id": "c_021",
+      "name": "Percentage",
+      "name_en": "Percentage",
+      "description": "language.Percentage (REAL)",
+      "aliases": [
+        "Percentage",
+        "Percentage"
+      ],
+      "mapped_columns": [
+        "language.Percentage"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_083",
+      "concept_id": "c_022",
+      "name": "City",
+      "name_en": "City",
+      "description": "located.City (TEXT)",
+      "aliases": [
+        "City",
+        "City"
+      ],
+      "mapped_columns": [
+        "located.City"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_084",
+      "concept_id": "c_022",
+      "name": "Province",
+      "name_en": "Province",
+      "description": "located.Province (TEXT)",
+      "aliases": [
+        "Province",
+        "Province"
+      ],
+      "mapped_columns": [
+        "located.Province"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_085",
+      "concept_id": "c_022",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "located.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "located.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_086",
+      "concept_id": "c_022",
+      "name": "River",
+      "name_en": "River",
+      "description": "located.River (TEXT)",
+      "aliases": [
+        "River",
+        "River"
+      ],
+      "mapped_columns": [
+        "located.River"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_087",
+      "concept_id": "c_022",
+      "name": "Lake",
+      "name_en": "Lake",
+      "description": "located.Lake (TEXT)",
+      "aliases": [
+        "Lake",
+        "Lake"
+      ],
+      "mapped_columns": [
+        "located.Lake"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_088",
+      "concept_id": "c_022",
+      "name": "Sea",
+      "name_en": "Sea",
+      "description": "located.Sea (TEXT)",
+      "aliases": [
+        "Sea",
+        "Sea"
+      ],
+      "mapped_columns": [
+        "located.Sea"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_089",
+      "concept_id": "c_023",
+      "name": "City",
+      "name_en": "City",
+      "description": "locatedOn.City (TEXT)",
+      "aliases": [
+        "City",
+        "City"
+      ],
+      "mapped_columns": [
+        "locatedOn.City"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_090",
+      "concept_id": "c_023",
+      "name": "Province",
+      "name_en": "Province",
+      "description": "locatedOn.Province (TEXT)",
+      "aliases": [
+        "Province",
+        "Province"
+      ],
+      "mapped_columns": [
+        "locatedOn.Province"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_091",
+      "concept_id": "c_023",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "locatedOn.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "locatedOn.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_092",
+      "concept_id": "c_023",
+      "name": "Island",
+      "name_en": "Island",
+      "description": "locatedOn.Island (TEXT)",
+      "aliases": [
+        "Island",
+        "Island"
+      ],
+      "mapped_columns": [
+        "locatedOn.Island"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_093",
+      "concept_id": "c_024",
+      "name": "Sea1",
+      "name_en": "Sea1",
+      "description": "mergesWith.Sea1 (TEXT)",
+      "aliases": [
+        "Sea1",
+        "Sea1"
+      ],
+      "mapped_columns": [
+        "mergesWith.Sea1"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_094",
+      "concept_id": "c_024",
+      "name": "Sea2",
+      "name_en": "Sea2",
+      "description": "mergesWith.Sea2 (TEXT)",
+      "aliases": [
+        "Sea2",
+        "Sea2"
+      ],
+      "mapped_columns": [
+        "mergesWith.Sea2"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_095",
+      "concept_id": "c_025",
+      "name": "Name",
+      "name_en": "Name",
+      "description": "mountain.Name (TEXT)",
+      "aliases": [
+        "Name",
+        "Name"
+      ],
+      "mapped_columns": [
+        "mountain.Name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_096",
+      "concept_id": "c_025",
+      "name": "Mountains",
+      "name_en": "Mountains",
+      "description": "mountain.Mountains (TEXT)",
+      "aliases": [
+        "Mountains",
+        "Mountains"
+      ],
+      "mapped_columns": [
+        "mountain.Mountains"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_097",
+      "concept_id": "c_025",
+      "name": "Height",
+      "name_en": "Height",
+      "description": "mountain.Height (REAL)",
+      "aliases": [
+        "Height",
+        "Height"
+      ],
+      "mapped_columns": [
+        "mountain.Height"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_098",
+      "concept_id": "c_025",
+      "name": "Type",
+      "name_en": "Type",
+      "description": "mountain.Type (TEXT)",
+      "aliases": [
+        "Type",
+        "Type"
+      ],
+      "mapped_columns": [
+        "mountain.Type"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_099",
+      "concept_id": "c_025",
+      "name": "Longitude",
+      "name_en": "Longitude",
+      "description": "mountain.Longitude (REAL)",
+      "aliases": [
+        "Longitude",
+        "Longitude"
+      ],
+      "mapped_columns": [
+        "mountain.Longitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_100",
+      "concept_id": "c_025",
+      "name": "Latitude",
+      "name_en": "Latitude",
+      "description": "mountain.Latitude (REAL)",
+      "aliases": [
+        "Latitude",
+        "Latitude"
+      ],
+      "mapped_columns": [
+        "mountain.Latitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_101",
+      "concept_id": "c_026",
+      "name": "Mountain",
+      "name_en": "Mountain",
+      "description": "mountainOnIsland.Mountain (TEXT)",
+      "aliases": [
+        "Mountain",
+        "Mountain"
+      ],
+      "mapped_columns": [
+        "mountainOnIsland.Mountain"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_102",
+      "concept_id": "c_026",
+      "name": "Island",
+      "name_en": "Island",
+      "description": "mountainOnIsland.Island (TEXT)",
+      "aliases": [
+        "Island",
+        "Island"
+      ],
+      "mapped_columns": [
+        "mountainOnIsland.Island"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_103",
+      "concept_id": "c_027",
+      "name": "Abbreviation",
+      "name_en": "Abbreviation",
+      "description": "organization.Abbreviation (TEXT)",
+      "aliases": [
+        "Abbreviation",
+        "Abbreviation"
+      ],
+      "mapped_columns": [
+        "organization.Abbreviation"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_104",
+      "concept_id": "c_027",
+      "name": "Name",
+      "name_en": "Name",
+      "description": "organization.Name (TEXT)",
+      "aliases": [
+        "Name",
+        "Name"
+      ],
+      "mapped_columns": [
+        "organization.Name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_105",
+      "concept_id": "c_027",
+      "name": "City",
+      "name_en": "City",
+      "description": "organization.City (TEXT)",
+      "aliases": [
+        "City",
+        "City"
+      ],
+      "mapped_columns": [
+        "organization.City"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_106",
+      "concept_id": "c_027",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "organization.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "organization.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_107",
+      "concept_id": "c_027",
+      "name": "Province",
+      "name_en": "Province",
+      "description": "organization.Province (TEXT)",
+      "aliases": [
+        "Province",
+        "Province"
+      ],
+      "mapped_columns": [
+        "organization.Province"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_108",
+      "concept_id": "c_027",
+      "name": "Established",
+      "name_en": "Established",
+      "description": "organization.Established (DATE)",
+      "aliases": [
+        "Established",
+        "Established"
+      ],
+      "mapped_columns": [
+        "organization.Established"
+      ],
+      "value_mapping": {},
+      "data_type": "DATE",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_109",
+      "concept_id": "c_028",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "politics.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "politics.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_110",
+      "concept_id": "c_028",
+      "name": "Independence",
+      "name_en": "Independence",
+      "description": "politics.Independence (DATE)",
+      "aliases": [
+        "Independence",
+        "Independence"
+      ],
+      "mapped_columns": [
+        "politics.Independence"
+      ],
+      "value_mapping": {},
+      "data_type": "DATE",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_111",
+      "concept_id": "c_028",
+      "name": "Dependent",
+      "name_en": "Dependent",
+      "description": "politics.Dependent (TEXT)",
+      "aliases": [
+        "Dependent",
+        "Dependent"
+      ],
+      "mapped_columns": [
+        "politics.Dependent"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_112",
+      "concept_id": "c_028",
+      "name": "Government",
+      "name_en": "Government",
+      "description": "politics.Government (TEXT)",
+      "aliases": [
+        "Government",
+        "Government"
+      ],
+      "mapped_columns": [
+        "politics.Government"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_113",
+      "concept_id": "c_029",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "population.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "population.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_114",
+      "concept_id": "c_029",
+      "name": "Population Growth",
+      "name_en": "Population Growth",
+      "description": "population.Population_Growth (REAL)",
+      "aliases": [
+        "Population_Growth",
+        "Population Growth"
+      ],
+      "mapped_columns": [
+        "population.Population_Growth"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_115",
+      "concept_id": "c_029",
+      "name": "Infant Mortality",
+      "name_en": "Infant Mortality",
+      "description": "population.Infant_Mortality (REAL)",
+      "aliases": [
+        "Infant_Mortality",
+        "Infant Mortality"
+      ],
+      "mapped_columns": [
+        "population.Infant_Mortality"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_116",
+      "concept_id": "c_030",
+      "name": "Name",
+      "name_en": "Name",
+      "description": "province.Name (TEXT)",
+      "aliases": [
+        "Name",
+        "Name"
+      ],
+      "mapped_columns": [
+        "province.Name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_117",
+      "concept_id": "c_030",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "province.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "province.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_118",
+      "concept_id": "c_030",
+      "name": "Population",
+      "name_en": "Population",
+      "description": "province.Population (INTEGER)",
+      "aliases": [
+        "Population",
+        "Population"
+      ],
+      "mapped_columns": [
+        "province.Population"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_119",
+      "concept_id": "c_030",
+      "name": "Area",
+      "name_en": "Area",
+      "description": "province.Area (REAL)",
+      "aliases": [
+        "Area",
+        "Area"
+      ],
+      "mapped_columns": [
+        "province.Area"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_120",
+      "concept_id": "c_030",
+      "name": "Capital",
+      "name_en": "Capital",
+      "description": "province.Capital (TEXT)",
+      "aliases": [
+        "Capital",
+        "Capital"
+      ],
+      "mapped_columns": [
+        "province.Capital"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_121",
+      "concept_id": "c_030",
+      "name": "CapProv",
+      "name_en": "CapProv",
+      "description": "province.CapProv (TEXT)",
+      "aliases": [
+        "CapProv",
+        "CapProv"
+      ],
+      "mapped_columns": [
+        "province.CapProv"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_122",
+      "concept_id": "c_031",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "religion.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "religion.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_123",
+      "concept_id": "c_031",
+      "name": "Name",
+      "name_en": "Name",
+      "description": "religion.Name (TEXT)",
+      "aliases": [
+        "Name",
+        "Name"
+      ],
+      "mapped_columns": [
+        "religion.Name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_124",
+      "concept_id": "c_031",
+      "name": "Percentage",
+      "name_en": "Percentage",
+      "description": "religion.Percentage (REAL)",
+      "aliases": [
+        "Percentage",
+        "Percentage"
+      ],
+      "mapped_columns": [
+        "religion.Percentage"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_125",
+      "concept_id": "c_032",
+      "name": "Name",
+      "name_en": "Name",
+      "description": "river.Name (TEXT)",
+      "aliases": [
+        "Name",
+        "Name"
+      ],
+      "mapped_columns": [
+        "river.Name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_126",
+      "concept_id": "c_032",
+      "name": "River",
+      "name_en": "River",
+      "description": "river.River (TEXT)",
+      "aliases": [
+        "River",
+        "River"
+      ],
+      "mapped_columns": [
+        "river.River"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_127",
+      "concept_id": "c_032",
+      "name": "Lake",
+      "name_en": "Lake",
+      "description": "river.Lake (TEXT)",
+      "aliases": [
+        "Lake",
+        "Lake"
+      ],
+      "mapped_columns": [
+        "river.Lake"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_128",
+      "concept_id": "c_032",
+      "name": "Sea",
+      "name_en": "Sea",
+      "description": "river.Sea (TEXT)",
+      "aliases": [
+        "Sea",
+        "Sea"
+      ],
+      "mapped_columns": [
+        "river.Sea"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_129",
+      "concept_id": "c_032",
+      "name": "Length",
+      "name_en": "Length",
+      "description": "river.Length (REAL)",
+      "aliases": [
+        "Length",
+        "Length"
+      ],
+      "mapped_columns": [
+        "river.Length"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_130",
+      "concept_id": "c_032",
+      "name": "SourceLongitude",
+      "name_en": "SourceLongitude",
+      "description": "river.SourceLongitude (REAL)",
+      "aliases": [
+        "SourceLongitude",
+        "SourceLongitude"
+      ],
+      "mapped_columns": [
+        "river.SourceLongitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_131",
+      "concept_id": "c_032",
+      "name": "SourceLatitude",
+      "name_en": "SourceLatitude",
+      "description": "river.SourceLatitude (REAL)",
+      "aliases": [
+        "SourceLatitude",
+        "SourceLatitude"
+      ],
+      "mapped_columns": [
+        "river.SourceLatitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_132",
+      "concept_id": "c_032",
+      "name": "Mountains",
+      "name_en": "Mountains",
+      "description": "river.Mountains (TEXT)",
+      "aliases": [
+        "Mountains",
+        "Mountains"
+      ],
+      "mapped_columns": [
+        "river.Mountains"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_133",
+      "concept_id": "c_032",
+      "name": "SourceAltitude",
+      "name_en": "SourceAltitude",
+      "description": "river.SourceAltitude (REAL)",
+      "aliases": [
+        "SourceAltitude",
+        "SourceAltitude"
+      ],
+      "mapped_columns": [
+        "river.SourceAltitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_134",
+      "concept_id": "c_032",
+      "name": "EstuaryLongitude",
+      "name_en": "EstuaryLongitude",
+      "description": "river.EstuaryLongitude (REAL)",
+      "aliases": [
+        "EstuaryLongitude",
+        "EstuaryLongitude"
+      ],
+      "mapped_columns": [
+        "river.EstuaryLongitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_135",
+      "concept_id": "c_032",
+      "name": "EstuaryLatitude",
+      "name_en": "EstuaryLatitude",
+      "description": "river.EstuaryLatitude (REAL)",
+      "aliases": [
+        "EstuaryLatitude",
+        "EstuaryLatitude"
+      ],
+      "mapped_columns": [
+        "river.EstuaryLatitude"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_136",
+      "concept_id": "c_033",
+      "name": "Name",
+      "name_en": "Name",
+      "description": "sea.Name (TEXT)",
+      "aliases": [
+        "Name",
+        "Name"
+      ],
+      "mapped_columns": [
+        "sea.Name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_137",
+      "concept_id": "c_033",
+      "name": "Depth",
+      "name_en": "Depth",
+      "description": "sea.Depth (REAL)",
+      "aliases": [
+        "Depth",
+        "Depth"
+      ],
+      "mapped_columns": [
+        "sea.Depth"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_138",
+      "concept_id": "c_034",
+      "name": "Country",
+      "name_en": "Country",
+      "description": "target.Country (TEXT)",
+      "aliases": [
+        "Country",
+        "Country"
+      ],
+      "mapped_columns": [
+        "target.Country"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_139",
+      "concept_id": "c_034",
+      "name": "Target",
+      "name_en": "Target",
+      "description": "target.Target (TEXT)",
+      "aliases": [
+        "Target",
+        "Target"
+      ],
+      "mapped_columns": [
+        "target.Target"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    }
+  ],
+  "relations": [],
+  "business_rules": [],
+  "term_dictionary": [
+    {
+      "id": "td_001",
+      "term": "Gross domestic product",
+      "definition": "GDP",
+      "sql_expression": "GDP",
+      "mapped_concept_ids": [],
+      "source": "knowledge_evidence"
+    },
+    {
+      "id": "td_002",
+      "term": "Bangladesh is a country",
+      "definition": "",
+      "sql_expression": "",
+      "mapped_concept_ids": [
+        "c_004"
+      ],
+      "source": "knowledge_evidence"
+    },
+    {
+      "id": "td_003",
+      "term": "Nation and country are synonyms; Form of governance was mentioned in politics.Government; Least prosperous means lowest GDP",
+      "definition": "",
+      "sql_expression": "",
+      "mapped_concept_ids": [
+        "c_004",
+        "c_028"
+      ],
+      "source": "knowledge_evidence"
+    },
+    {
+      "id": "td_004",
+      "term": "peak means the highest",
+      "definition": "",
+      "sql_expression": "",
+      "mapped_concept_ids": [],
+      "source": "knowledge_evidence"
+    },
+    {
+      "id": "td_005",
+      "term": "GDP",
+      "definition": "gross domestic product",
+      "sql_expression": "",
+      "mapped_concept_ids": [],
+      "source": "knowledge_evidence"
+    }
+  ],
+  "schema_mapping": {
+    "tables": {
+      "borders": {
+        "concept_id": "c_001",
+        "description": "表: borders",
+        "key_columns": []
+      },
+      "city": {
+        "concept_id": "c_002",
+        "description": "表: city",
+        "key_columns": []
+      },
+      "continent": {
+        "concept_id": "c_003",
+        "description": "表: continent",
+        "key_columns": [
+          "Name"
+        ]
+      },
+      "country": {
+        "concept_id": "c_004",
+        "description": "表: country",
+        "key_columns": [
+          "Code"
+        ]
+      },
+      "desert": {
+        "concept_id": "c_005",
+        "description": "表: desert",
+        "key_columns": [
+          "Name"
+        ]
+      },
+      "economy": {
+        "concept_id": "c_006",
+        "description": "表: economy",
+        "key_columns": [
+          "Country"
+        ]
+      },
+      "encompasses": {
+        "concept_id": "c_007",
+        "description": "表: encompasses",
+        "key_columns": []
+      },
+      "ethnicGroup": {
+        "concept_id": "c_008",
+        "description": "表: ethnicGroup",
+        "key_columns": []
+      },
+      "geo_desert": {
+        "concept_id": "c_009",
+        "description": "表: geo_desert",
+        "key_columns": []
+      },
+      "geo_estuary": {
+        "concept_id": "c_010",
+        "description": "表: geo_estuary",
+        "key_columns": []
+      },
+      "geo_island": {
+        "concept_id": "c_011",
+        "description": "表: geo_island",
+        "key_columns": []
+      },
+      "geo_lake": {
+        "concept_id": "c_012",
+        "description": "表: geo_lake",
+        "key_columns": []
+      },
+      "geo_mountain": {
+        "concept_id": "c_013",
+        "description": "表: geo_mountain",
+        "key_columns": []
+      },
+      "geo_river": {
+        "concept_id": "c_014",
+        "description": "表: geo_river",
+        "key_columns": []
+      },
+      "geo_sea": {
+        "concept_id": "c_015",
+        "description": "表: geo_sea",
+        "key_columns": []
+      },
+      "geo_source": {
+        "concept_id": "c_016",
+        "description": "表: geo_source",
+        "key_columns": []
+      },
+      "island": {
+        "concept_id": "c_017",
+        "description": "表: island",
+        "key_columns": [
+          "Name"
+        ]
+      },
+      "islandIn": {
+        "concept_id": "c_018",
+        "description": "表: islandIn",
+        "key_columns": []
+      },
+      "isMember": {
+        "concept_id": "c_019",
+        "description": "表: isMember",
+        "key_columns": []
+      },
+      "lake": {
+        "concept_id": "c_020",
+        "description": "表: lake",
+        "key_columns": [
+          "Name"
+        ]
+      },
+      "language": {
+        "concept_id": "c_021",
+        "description": "表: language",
+        "key_columns": []
+      },
+      "located": {
+        "concept_id": "c_022",
+        "description": "表: located",
+        "key_columns": []
+      },
+      "locatedOn": {
+        "concept_id": "c_023",
+        "description": "表: locatedOn",
+        "key_columns": []
+      },
+      "mergesWith": {
+        "concept_id": "c_024",
+        "description": "表: mergesWith",
+        "key_columns": []
+      },
+      "mountain": {
+        "concept_id": "c_025",
+        "description": "表: mountain",
+        "key_columns": [
+          "Name"
+        ]
+      },
+      "mountainOnIsland": {
+        "concept_id": "c_026",
+        "description": "表: mountainOnIsland",
+        "key_columns": []
+      },
+      "organization": {
+        "concept_id": "c_027",
+        "description": "表: organization",
+        "key_columns": [
+          "Abbreviation"
+        ]
+      },
+      "politics": {
+        "concept_id": "c_028",
+        "description": "表: politics",
+        "key_columns": [
+          "Country"
+        ]
+      },
+      "population": {
+        "concept_id": "c_029",
+        "description": "表: population",
+        "key_columns": [
+          "Country"
+        ]
+      },
+      "province": {
+        "concept_id": "c_030",
+        "description": "表: province",
+        "key_columns": []
+      },
+      "religion": {
+        "concept_id": "c_031",
+        "description": "表: religion",
+        "key_columns": []
+      },
+      "river": {
+        "concept_id": "c_032",
+        "description": "表: river",
+        "key_columns": [
+          "Name"
+        ]
+      },
+      "sea": {
+        "concept_id": "c_033",
+        "description": "表: sea",
+        "key_columns": [
+          "Name"
+        ]
+      },
+      "target": {
+        "concept_id": "c_034",
+        "description": "表: target",
+        "key_columns": [
+          "Country"
+        ]
+      }
+    },
+    "foreign_keys": []
+  }
+}

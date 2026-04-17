@@ -1,0 +1,1811 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "db_id": "public_review_platform",
+    "created_by": "auto",
+    "stats": {
+      "concepts": 15,
+      "attributes": 75,
+      "relations": 0,
+      "business_rules": 11,
+      "term_dictionary": 2
+    }
+  },
+  "concepts": [
+    {
+      "id": "c_001",
+      "name": "Attributes",
+      "name_en": "Attributes",
+      "type": "entity",
+      "description": "数据表: Attributes",
+      "aliases": [
+        "Attributes",
+        "attributes"
+      ],
+      "mapped_tables": [
+        "Attributes"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_002",
+      "name": "Categories",
+      "name_en": "Categories",
+      "type": "entity",
+      "description": "数据表: Categories",
+      "aliases": [
+        "Categories",
+        "categories"
+      ],
+      "mapped_tables": [
+        "Categories"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_003",
+      "name": "Compliments",
+      "name_en": "Compliments",
+      "type": "entity",
+      "description": "数据表: Compliments",
+      "aliases": [
+        "Compliments",
+        "compliments"
+      ],
+      "mapped_tables": [
+        "Compliments"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_004",
+      "name": "Days",
+      "name_en": "Days",
+      "type": "entity",
+      "description": "数据表: Days",
+      "aliases": [
+        "Days",
+        "days"
+      ],
+      "mapped_tables": [
+        "Days"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_005",
+      "name": "Years",
+      "name_en": "Years",
+      "type": "entity",
+      "description": "数据表: Years",
+      "aliases": [
+        "Years",
+        "years"
+      ],
+      "mapped_tables": [
+        "Years"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_006",
+      "name": "Business Attributes",
+      "name_en": "Business Attributes",
+      "type": "entity",
+      "description": "数据表: Business_Attributes",
+      "aliases": [
+        "Business_Attributes",
+        "business attributes"
+      ],
+      "mapped_tables": [
+        "Business_Attributes"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_007",
+      "name": "Business Categories",
+      "name_en": "Business Categories",
+      "type": "entity",
+      "description": "数据表: Business_Categories",
+      "aliases": [
+        "Business_Categories",
+        "business categories"
+      ],
+      "mapped_tables": [
+        "Business_Categories"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_008",
+      "name": "Business Hours",
+      "name_en": "Business Hours",
+      "type": "entity",
+      "description": "数据表: Business_Hours",
+      "aliases": [
+        "Business_Hours",
+        "business hours"
+      ],
+      "mapped_tables": [
+        "Business_Hours"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_009",
+      "name": "Checkins",
+      "name_en": "Checkins",
+      "type": "entity",
+      "description": "数据表: Checkins",
+      "aliases": [
+        "Checkins",
+        "checkins"
+      ],
+      "mapped_tables": [
+        "Checkins"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_010",
+      "name": "Elite",
+      "name_en": "Elite",
+      "type": "entity",
+      "description": "数据表: Elite",
+      "aliases": [
+        "Elite",
+        "elite"
+      ],
+      "mapped_tables": [
+        "Elite"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_011",
+      "name": "Reviews",
+      "name_en": "Reviews",
+      "type": "entity",
+      "description": "数据表: Reviews",
+      "aliases": [
+        "Reviews",
+        "reviews"
+      ],
+      "mapped_tables": [
+        "Reviews"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_012",
+      "name": "Tips",
+      "name_en": "Tips",
+      "type": "entity",
+      "description": "数据表: Tips",
+      "aliases": [
+        "Tips",
+        "tips"
+      ],
+      "mapped_tables": [
+        "Tips"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_013",
+      "name": "Users Compliments",
+      "name_en": "Users Compliments",
+      "type": "entity",
+      "description": "数据表: Users_Compliments",
+      "aliases": [
+        "Users_Compliments",
+        "users compliments"
+      ],
+      "mapped_tables": [
+        "Users_Compliments"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_014",
+      "name": "Business",
+      "name_en": "Business",
+      "type": "entity",
+      "description": "数据表: Business",
+      "aliases": [
+        "Business",
+        "business"
+      ],
+      "mapped_tables": [
+        "Business"
+      ],
+      "confidence": 1.0
+    },
+    {
+      "id": "c_015",
+      "name": "Users",
+      "name_en": "Users",
+      "type": "entity",
+      "description": "数据表: Users",
+      "aliases": [
+        "Users",
+        "users"
+      ],
+      "mapped_tables": [
+        "Users"
+      ],
+      "confidence": 1.0
+    }
+  ],
+  "attributes": [
+    {
+      "id": "a_001",
+      "concept_id": "c_001",
+      "name": "attribute id",
+      "name_en": "attribute id",
+      "description": "Attributes.attribute_id (INTEGER)",
+      "aliases": [
+        "attribute_id",
+        "attribute id"
+      ],
+      "mapped_columns": [
+        "Attributes.attribute_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_002",
+      "concept_id": "c_001",
+      "name": "attribute name",
+      "name_en": "attribute name",
+      "description": "Attributes.attribute_name (TEXT)",
+      "aliases": [
+        "attribute_name",
+        "attribute name"
+      ],
+      "mapped_columns": [
+        "Attributes.attribute_name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_003",
+      "concept_id": "c_002",
+      "name": "category id",
+      "name_en": "category id",
+      "description": "Categories.category_id (INTEGER)",
+      "aliases": [
+        "category_id",
+        "category id"
+      ],
+      "mapped_columns": [
+        "Categories.category_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_004",
+      "concept_id": "c_002",
+      "name": "category name",
+      "name_en": "category name",
+      "description": "Categories.category_name (TEXT)",
+      "aliases": [
+        "category_name",
+        "category name"
+      ],
+      "mapped_columns": [
+        "Categories.category_name"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_005",
+      "concept_id": "c_003",
+      "name": "compliment id",
+      "name_en": "compliment id",
+      "description": "Compliments.compliment_id (INTEGER)",
+      "aliases": [
+        "compliment_id",
+        "compliment id"
+      ],
+      "mapped_columns": [
+        "Compliments.compliment_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_006",
+      "concept_id": "c_003",
+      "name": "compliment type",
+      "name_en": "compliment type",
+      "description": "Compliments.compliment_type (TEXT)",
+      "aliases": [
+        "compliment_type",
+        "compliment type"
+      ],
+      "mapped_columns": [
+        "Compliments.compliment_type"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_007",
+      "concept_id": "c_004",
+      "name": "day id",
+      "name_en": "day id",
+      "description": "Days.day_id (INTEGER)",
+      "aliases": [
+        "day_id",
+        "day id"
+      ],
+      "mapped_columns": [
+        "Days.day_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_008",
+      "concept_id": "c_004",
+      "name": "day of week",
+      "name_en": "day of week",
+      "description": "Days.day_of_week (TEXT)",
+      "aliases": [
+        "day_of_week",
+        "day of week"
+      ],
+      "mapped_columns": [
+        "Days.day_of_week"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_009",
+      "concept_id": "c_005",
+      "name": "year id",
+      "name_en": "year id",
+      "description": "Years.year_id (INTEGER)",
+      "aliases": [
+        "year_id",
+        "year id"
+      ],
+      "mapped_columns": [
+        "Years.year_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_010",
+      "concept_id": "c_005",
+      "name": "actual year",
+      "name_en": "actual year",
+      "description": "Years.actual_year (INTEGER)",
+      "aliases": [
+        "actual_year",
+        "actual year"
+      ],
+      "mapped_columns": [
+        "Years.actual_year"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_011",
+      "concept_id": "c_006",
+      "name": "attribute id",
+      "name_en": "attribute id",
+      "description": "Business_Attributes.attribute_id (INTEGER)",
+      "aliases": [
+        "attribute_id",
+        "attribute id"
+      ],
+      "mapped_columns": [
+        "Business_Attributes.attribute_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_012",
+      "concept_id": "c_006",
+      "name": "business id",
+      "name_en": "business id",
+      "description": "Business_Attributes.business_id (INTEGER)",
+      "aliases": [
+        "business_id",
+        "business id"
+      ],
+      "mapped_columns": [
+        "Business_Attributes.business_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_013",
+      "concept_id": "c_006",
+      "name": "attribute value",
+      "name_en": "attribute value",
+      "description": "Business_Attributes.attribute_value (TEXT)",
+      "aliases": [
+        "attribute_value",
+        "attribute value"
+      ],
+      "mapped_columns": [
+        "Business_Attributes.attribute_value"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_014",
+      "concept_id": "c_007",
+      "name": "business id",
+      "name_en": "business id",
+      "description": "Business_Categories.business_id (INTEGER)",
+      "aliases": [
+        "business_id",
+        "business id"
+      ],
+      "mapped_columns": [
+        "Business_Categories.business_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_015",
+      "concept_id": "c_007",
+      "name": "category id",
+      "name_en": "category id",
+      "description": "Business_Categories.category_id (INTEGER)",
+      "aliases": [
+        "category_id",
+        "category id"
+      ],
+      "mapped_columns": [
+        "Business_Categories.category_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_016",
+      "concept_id": "c_008",
+      "name": "business id",
+      "name_en": "business id",
+      "description": "Business_Hours.business_id (INTEGER)",
+      "aliases": [
+        "business_id",
+        "business id"
+      ],
+      "mapped_columns": [
+        "Business_Hours.business_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_017",
+      "concept_id": "c_008",
+      "name": "day id",
+      "name_en": "day id",
+      "description": "Business_Hours.day_id (INTEGER)",
+      "aliases": [
+        "day_id",
+        "day id"
+      ],
+      "mapped_columns": [
+        "Business_Hours.day_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_018",
+      "concept_id": "c_008",
+      "name": "opening time",
+      "name_en": "opening time",
+      "description": "Business_Hours.opening_time (TEXT)",
+      "aliases": [
+        "opening_time",
+        "opening time"
+      ],
+      "mapped_columns": [
+        "Business_Hours.opening_time"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_019",
+      "concept_id": "c_008",
+      "name": "closing time",
+      "name_en": "closing time",
+      "description": "Business_Hours.closing_time (TEXT)",
+      "aliases": [
+        "closing_time",
+        "closing time"
+      ],
+      "mapped_columns": [
+        "Business_Hours.closing_time"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_020",
+      "concept_id": "c_009",
+      "name": "business id",
+      "name_en": "business id",
+      "description": "Checkins.business_id (INTEGER)",
+      "aliases": [
+        "business_id",
+        "business id"
+      ],
+      "mapped_columns": [
+        "Checkins.business_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_021",
+      "concept_id": "c_009",
+      "name": "day id",
+      "name_en": "day id",
+      "description": "Checkins.day_id (INTEGER)",
+      "aliases": [
+        "day_id",
+        "day id"
+      ],
+      "mapped_columns": [
+        "Checkins.day_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_022",
+      "concept_id": "c_009",
+      "name": "label time 0",
+      "name_en": "label time 0",
+      "description": "Checkins.label_time_0 (TEXT)",
+      "aliases": [
+        "label_time_0",
+        "label time 0"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_0"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_023",
+      "concept_id": "c_009",
+      "name": "label time 1",
+      "name_en": "label time 1",
+      "description": "Checkins.label_time_1 (TEXT)",
+      "aliases": [
+        "label_time_1",
+        "label time 1"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_1"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_024",
+      "concept_id": "c_009",
+      "name": "label time 2",
+      "name_en": "label time 2",
+      "description": "Checkins.label_time_2 (TEXT)",
+      "aliases": [
+        "label_time_2",
+        "label time 2"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_2"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_025",
+      "concept_id": "c_009",
+      "name": "label time 3",
+      "name_en": "label time 3",
+      "description": "Checkins.label_time_3 (TEXT)",
+      "aliases": [
+        "label_time_3",
+        "label time 3"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_3"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_026",
+      "concept_id": "c_009",
+      "name": "label time 4",
+      "name_en": "label time 4",
+      "description": "Checkins.label_time_4 (TEXT)",
+      "aliases": [
+        "label_time_4",
+        "label time 4"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_4"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_027",
+      "concept_id": "c_009",
+      "name": "label time 5",
+      "name_en": "label time 5",
+      "description": "Checkins.label_time_5 (TEXT)",
+      "aliases": [
+        "label_time_5",
+        "label time 5"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_5"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_028",
+      "concept_id": "c_009",
+      "name": "label time 6",
+      "name_en": "label time 6",
+      "description": "Checkins.label_time_6 (TEXT)",
+      "aliases": [
+        "label_time_6",
+        "label time 6"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_6"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_029",
+      "concept_id": "c_009",
+      "name": "label time 7",
+      "name_en": "label time 7",
+      "description": "Checkins.label_time_7 (TEXT)",
+      "aliases": [
+        "label_time_7",
+        "label time 7"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_7"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_030",
+      "concept_id": "c_009",
+      "name": "label time 8",
+      "name_en": "label time 8",
+      "description": "Checkins.label_time_8 (TEXT)",
+      "aliases": [
+        "label_time_8",
+        "label time 8"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_8"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_031",
+      "concept_id": "c_009",
+      "name": "label time 9",
+      "name_en": "label time 9",
+      "description": "Checkins.label_time_9 (TEXT)",
+      "aliases": [
+        "label_time_9",
+        "label time 9"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_9"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_032",
+      "concept_id": "c_009",
+      "name": "label time 10",
+      "name_en": "label time 10",
+      "description": "Checkins.label_time_10 (TEXT)",
+      "aliases": [
+        "label_time_10",
+        "label time 10"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_10"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_033",
+      "concept_id": "c_009",
+      "name": "label time 11",
+      "name_en": "label time 11",
+      "description": "Checkins.label_time_11 (TEXT)",
+      "aliases": [
+        "label_time_11",
+        "label time 11"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_11"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_034",
+      "concept_id": "c_009",
+      "name": "label time 12",
+      "name_en": "label time 12",
+      "description": "Checkins.label_time_12 (TEXT)",
+      "aliases": [
+        "label_time_12",
+        "label time 12"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_12"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_035",
+      "concept_id": "c_009",
+      "name": "label time 13",
+      "name_en": "label time 13",
+      "description": "Checkins.label_time_13 (TEXT)",
+      "aliases": [
+        "label_time_13",
+        "label time 13"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_13"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_036",
+      "concept_id": "c_009",
+      "name": "label time 14",
+      "name_en": "label time 14",
+      "description": "Checkins.label_time_14 (TEXT)",
+      "aliases": [
+        "label_time_14",
+        "label time 14"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_14"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_037",
+      "concept_id": "c_009",
+      "name": "label time 15",
+      "name_en": "label time 15",
+      "description": "Checkins.label_time_15 (TEXT)",
+      "aliases": [
+        "label_time_15",
+        "label time 15"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_15"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_038",
+      "concept_id": "c_009",
+      "name": "label time 16",
+      "name_en": "label time 16",
+      "description": "Checkins.label_time_16 (TEXT)",
+      "aliases": [
+        "label_time_16",
+        "label time 16"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_16"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_039",
+      "concept_id": "c_009",
+      "name": "label time 17",
+      "name_en": "label time 17",
+      "description": "Checkins.label_time_17 (TEXT)",
+      "aliases": [
+        "label_time_17",
+        "label time 17"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_17"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_040",
+      "concept_id": "c_009",
+      "name": "label time 18",
+      "name_en": "label time 18",
+      "description": "Checkins.label_time_18 (TEXT)",
+      "aliases": [
+        "label_time_18",
+        "label time 18"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_18"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_041",
+      "concept_id": "c_009",
+      "name": "label time 19",
+      "name_en": "label time 19",
+      "description": "Checkins.label_time_19 (TEXT)",
+      "aliases": [
+        "label_time_19",
+        "label time 19"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_19"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_042",
+      "concept_id": "c_009",
+      "name": "label time 20",
+      "name_en": "label time 20",
+      "description": "Checkins.label_time_20 (TEXT)",
+      "aliases": [
+        "label_time_20",
+        "label time 20"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_20"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_043",
+      "concept_id": "c_009",
+      "name": "label time 21",
+      "name_en": "label time 21",
+      "description": "Checkins.label_time_21 (TEXT)",
+      "aliases": [
+        "label_time_21",
+        "label time 21"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_21"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_044",
+      "concept_id": "c_009",
+      "name": "label time 22",
+      "name_en": "label time 22",
+      "description": "Checkins.label_time_22 (TEXT)",
+      "aliases": [
+        "label_time_22",
+        "label time 22"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_22"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_045",
+      "concept_id": "c_009",
+      "name": "label time 23",
+      "name_en": "label time 23",
+      "description": "Checkins.label_time_23 (TEXT)",
+      "aliases": [
+        "label_time_23",
+        "label time 23"
+      ],
+      "mapped_columns": [
+        "Checkins.label_time_23"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_046",
+      "concept_id": "c_010",
+      "name": "user id",
+      "name_en": "user id",
+      "description": "Elite.user_id (INTEGER)",
+      "aliases": [
+        "user_id",
+        "user id"
+      ],
+      "mapped_columns": [
+        "Elite.user_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_047",
+      "concept_id": "c_010",
+      "name": "year id",
+      "name_en": "year id",
+      "description": "Elite.year_id (INTEGER)",
+      "aliases": [
+        "year_id",
+        "year id"
+      ],
+      "mapped_columns": [
+        "Elite.year_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_048",
+      "concept_id": "c_011",
+      "name": "business id",
+      "name_en": "business id",
+      "description": "Reviews.business_id (INTEGER)",
+      "aliases": [
+        "business_id",
+        "business id"
+      ],
+      "mapped_columns": [
+        "Reviews.business_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_049",
+      "concept_id": "c_011",
+      "name": "user id",
+      "name_en": "user id",
+      "description": "Reviews.user_id (INTEGER)",
+      "aliases": [
+        "user_id",
+        "user id"
+      ],
+      "mapped_columns": [
+        "Reviews.user_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_050",
+      "concept_id": "c_011",
+      "name": "review stars",
+      "name_en": "review stars",
+      "description": "Reviews.review_stars (INTEGER)",
+      "aliases": [
+        "review_stars",
+        "review stars"
+      ],
+      "mapped_columns": [
+        "Reviews.review_stars"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_051",
+      "concept_id": "c_011",
+      "name": "review votes funny",
+      "name_en": "review votes funny",
+      "description": "Reviews.review_votes_funny (TEXT)",
+      "aliases": [
+        "review_votes_funny",
+        "review votes funny"
+      ],
+      "mapped_columns": [
+        "Reviews.review_votes_funny"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_052",
+      "concept_id": "c_011",
+      "name": "review votes useful",
+      "name_en": "review votes useful",
+      "description": "Reviews.review_votes_useful (TEXT)",
+      "aliases": [
+        "review_votes_useful",
+        "review votes useful"
+      ],
+      "mapped_columns": [
+        "Reviews.review_votes_useful"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_053",
+      "concept_id": "c_011",
+      "name": "review votes cool",
+      "name_en": "review votes cool",
+      "description": "Reviews.review_votes_cool (TEXT)",
+      "aliases": [
+        "review_votes_cool",
+        "review votes cool"
+      ],
+      "mapped_columns": [
+        "Reviews.review_votes_cool"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_054",
+      "concept_id": "c_011",
+      "name": "review length",
+      "name_en": "review length",
+      "description": "Reviews.review_length (TEXT)",
+      "aliases": [
+        "review_length",
+        "review length"
+      ],
+      "mapped_columns": [
+        "Reviews.review_length"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_055",
+      "concept_id": "c_012",
+      "name": "business id",
+      "name_en": "business id",
+      "description": "Tips.business_id (INTEGER)",
+      "aliases": [
+        "business_id",
+        "business id"
+      ],
+      "mapped_columns": [
+        "Tips.business_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_056",
+      "concept_id": "c_012",
+      "name": "user id",
+      "name_en": "user id",
+      "description": "Tips.user_id (INTEGER)",
+      "aliases": [
+        "user_id",
+        "user id"
+      ],
+      "mapped_columns": [
+        "Tips.user_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_057",
+      "concept_id": "c_012",
+      "name": "likes",
+      "name_en": "likes",
+      "description": "Tips.likes (INTEGER)",
+      "aliases": [
+        "likes",
+        "likes"
+      ],
+      "mapped_columns": [
+        "Tips.likes"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_058",
+      "concept_id": "c_012",
+      "name": "tip length",
+      "name_en": "tip length",
+      "description": "Tips.tip_length (TEXT)",
+      "aliases": [
+        "tip_length",
+        "tip length"
+      ],
+      "mapped_columns": [
+        "Tips.tip_length"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_059",
+      "concept_id": "c_013",
+      "name": "compliment id",
+      "name_en": "compliment id",
+      "description": "Users_Compliments.compliment_id (INTEGER)",
+      "aliases": [
+        "compliment_id",
+        "compliment id"
+      ],
+      "mapped_columns": [
+        "Users_Compliments.compliment_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_060",
+      "concept_id": "c_013",
+      "name": "user id",
+      "name_en": "user id",
+      "description": "Users_Compliments.user_id (INTEGER)",
+      "aliases": [
+        "user_id",
+        "user id"
+      ],
+      "mapped_columns": [
+        "Users_Compliments.user_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_061",
+      "concept_id": "c_013",
+      "name": "number of compliments",
+      "name_en": "number of compliments",
+      "description": "Users_Compliments.number_of_compliments (TEXT)",
+      "aliases": [
+        "number_of_compliments",
+        "number of compliments"
+      ],
+      "mapped_columns": [
+        "Users_Compliments.number_of_compliments"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_062",
+      "concept_id": "c_014",
+      "name": "business id",
+      "name_en": "business id",
+      "description": "Business.business_id (INTEGER)",
+      "aliases": [
+        "business_id",
+        "business id"
+      ],
+      "mapped_columns": [
+        "Business.business_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_063",
+      "concept_id": "c_014",
+      "name": "active",
+      "name_en": "active",
+      "description": "Business.active (TEXT)",
+      "aliases": [
+        "active",
+        "active"
+      ],
+      "mapped_columns": [
+        "Business.active"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_064",
+      "concept_id": "c_014",
+      "name": "city",
+      "name_en": "city",
+      "description": "Business.city (TEXT)",
+      "aliases": [
+        "city",
+        "city"
+      ],
+      "mapped_columns": [
+        "Business.city"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_065",
+      "concept_id": "c_014",
+      "name": "state",
+      "name_en": "state",
+      "description": "Business.state (TEXT)",
+      "aliases": [
+        "state",
+        "state"
+      ],
+      "mapped_columns": [
+        "Business.state"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_066",
+      "concept_id": "c_014",
+      "name": "stars",
+      "name_en": "stars",
+      "description": "Business.stars (REAL)",
+      "aliases": [
+        "stars",
+        "stars"
+      ],
+      "mapped_columns": [
+        "Business.stars"
+      ],
+      "value_mapping": {},
+      "data_type": "REAL",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_067",
+      "concept_id": "c_014",
+      "name": "review count",
+      "name_en": "review count",
+      "description": "Business.review_count (TEXT)",
+      "aliases": [
+        "review_count",
+        "review count"
+      ],
+      "mapped_columns": [
+        "Business.review_count"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_068",
+      "concept_id": "c_015",
+      "name": "user id",
+      "name_en": "user id",
+      "description": "Users.user_id (INTEGER)",
+      "aliases": [
+        "user_id",
+        "user id"
+      ],
+      "mapped_columns": [
+        "Users.user_id"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": true,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_069",
+      "concept_id": "c_015",
+      "name": "user yelping since year",
+      "name_en": "user yelping since year",
+      "description": "Users.user_yelping_since_year (INTEGER)",
+      "aliases": [
+        "user_yelping_since_year",
+        "user yelping since year"
+      ],
+      "mapped_columns": [
+        "Users.user_yelping_since_year"
+      ],
+      "value_mapping": {},
+      "data_type": "INTEGER",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_070",
+      "concept_id": "c_015",
+      "name": "user average stars",
+      "name_en": "user average stars",
+      "description": "Users.user_average_stars (TEXT)",
+      "aliases": [
+        "user_average_stars",
+        "user average stars"
+      ],
+      "mapped_columns": [
+        "Users.user_average_stars"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_071",
+      "concept_id": "c_015",
+      "name": "user votes funny",
+      "name_en": "user votes funny",
+      "description": "Users.user_votes_funny (TEXT)",
+      "aliases": [
+        "user_votes_funny",
+        "user votes funny"
+      ],
+      "mapped_columns": [
+        "Users.user_votes_funny"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_072",
+      "concept_id": "c_015",
+      "name": "user votes useful",
+      "name_en": "user votes useful",
+      "description": "Users.user_votes_useful (TEXT)",
+      "aliases": [
+        "user_votes_useful",
+        "user votes useful"
+      ],
+      "mapped_columns": [
+        "Users.user_votes_useful"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_073",
+      "concept_id": "c_015",
+      "name": "user votes cool",
+      "name_en": "user votes cool",
+      "description": "Users.user_votes_cool (TEXT)",
+      "aliases": [
+        "user_votes_cool",
+        "user votes cool"
+      ],
+      "mapped_columns": [
+        "Users.user_votes_cool"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_074",
+      "concept_id": "c_015",
+      "name": "user review count",
+      "name_en": "user review count",
+      "description": "Users.user_review_count (TEXT)",
+      "aliases": [
+        "user_review_count",
+        "user review count"
+      ],
+      "mapped_columns": [
+        "Users.user_review_count"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    },
+    {
+      "id": "a_075",
+      "concept_id": "c_015",
+      "name": "user fans",
+      "name_en": "user fans",
+      "description": "Users.user_fans (TEXT)",
+      "aliases": [
+        "user_fans",
+        "user fans"
+      ],
+      "mapped_columns": [
+        "Users.user_fans"
+      ],
+      "value_mapping": {},
+      "data_type": "TEXT",
+      "is_primary_key": false,
+      "confidence": 1.0
+    }
+  ],
+  "relations": [],
+  "business_rules": [
+    {
+      "id": "br_001",
+      "name": "more appealing to users",
+      "pattern": "more\\ appealing\\ to\\ users",
+      "sql_template": "MAX(review_count)",
+      "description": "Evidence: more appealing to users → MAX(review_count)",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_002",
+      "name": "running business",
+      "pattern": "running\\ business",
+      "sql_template": "business where active = 'true'",
+      "description": "Evidence: running business → business where active = 'true'",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_003",
+      "name": "opened for 24/7",
+      "pattern": "opened\\ for\\ 24/7",
+      "sql_template": "Business_Hours WHERE opening_time = closing_time and business_id COUNT(day_id) = 7",
+      "description": "Evidence: opened for 24/7 → Business_Hours WHERE opening_time = closing_time and business_id COUNT(day_id) = 7",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_004",
+      "name": "average ratings of at least 4",
+      "pattern": "average\\ ratings\\ of\\ at\\ least\\ 4",
+      "sql_template": "user_average_stars > = 4",
+      "description": "Evidence: average ratings of at least 4 → user_average_stars > = 4",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_005",
+      "name": "no fans or followers",
+      "pattern": "no\\ fans\\ or\\ followers",
+      "sql_template": "user_fans = 'None'",
+      "description": "Evidence: no fans or followers → user_fans = 'None'",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_006",
+      "name": "\"Shopping Centers\" is the category_name; high review count",
+      "pattern": "\"Shopping\\ Centers\"\\ is\\ the\\ category_name;\\ high\\ review\\ count",
+      "sql_template": "review_count = 'High'",
+      "description": "Evidence: \"Shopping Centers\" is the category_name; high review count → review_count = 'High'",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_007",
+      "name": "Arizona",
+      "pattern": "Arizona",
+      "sql_template": "state = 'AZ'",
+      "description": "Evidence: Arizona → state = 'AZ'",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_008",
+      "name": "do not provide alcohol",
+      "pattern": "do\\ not\\ provide\\ alcohol",
+      "sql_template": "attribute_name = 'Alcohol' and attribute_value = 'none'",
+      "description": "Evidence: do not provide alcohol → attribute_name = 'Alcohol' and attribute_value = 'none'",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_009",
+      "name": "short tip",
+      "pattern": "short\\ tip",
+      "sql_template": "tip_length = 'Short'",
+      "description": "Evidence: short tip → tip_length = 'Short'",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_010",
+      "name": "opened for 24 hours",
+      "pattern": "opened\\ for\\ 24\\ hours",
+      "sql_template": "attribute_name = 'Open 24 Hours' AND attribute_value = 'true'",
+      "description": "Evidence: opened for 24 hours → attribute_name = 'Open 24 Hours' AND attribute_value = 'true'",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    },
+    {
+      "id": "br_011",
+      "name": "\"Good for Groups\" and \"Good for Dancing\" are attribute_name; active business",
+      "pattern": "\"Good\\ for\\ Groups\"\\ and\\ \"Good\\ for\\ Dancing\"\\ are\\ attribute_name;\\ active\\ business",
+      "sql_template": "active = true'",
+      "description": "Evidence: \"Good for Groups\" and \"Good for Dancing\" are attribute_name; active business → active = true'",
+      "source": "knowledge_evidence",
+      "confidence": 0.9
+    }
+  ],
+  "term_dictionary": [
+    {
+      "id": "td_001",
+      "term": "business attribute",
+      "definition": "attribute_name",
+      "sql_expression": "attribute_name",
+      "mapped_concept_ids": [
+        "c_014"
+      ],
+      "source": "knowledge_evidence"
+    },
+    {
+      "id": "td_002",
+      "term": "business category",
+      "definition": "category_name",
+      "sql_expression": "category_name",
+      "mapped_concept_ids": [
+        "c_014"
+      ],
+      "source": "knowledge_evidence"
+    }
+  ],
+  "schema_mapping": {
+    "tables": {
+      "Attributes": {
+        "concept_id": "c_001",
+        "description": "表: Attributes",
+        "key_columns": [
+          "attribute_id"
+        ]
+      },
+      "Categories": {
+        "concept_id": "c_002",
+        "description": "表: Categories",
+        "key_columns": [
+          "category_id"
+        ]
+      },
+      "Compliments": {
+        "concept_id": "c_003",
+        "description": "表: Compliments",
+        "key_columns": [
+          "compliment_id"
+        ]
+      },
+      "Days": {
+        "concept_id": "c_004",
+        "description": "表: Days",
+        "key_columns": [
+          "day_id"
+        ]
+      },
+      "Years": {
+        "concept_id": "c_005",
+        "description": "表: Years",
+        "key_columns": [
+          "year_id"
+        ]
+      },
+      "Business_Attributes": {
+        "concept_id": "c_006",
+        "description": "表: Business_Attributes",
+        "key_columns": []
+      },
+      "Business_Categories": {
+        "concept_id": "c_007",
+        "description": "表: Business_Categories",
+        "key_columns": []
+      },
+      "Business_Hours": {
+        "concept_id": "c_008",
+        "description": "表: Business_Hours",
+        "key_columns": []
+      },
+      "Checkins": {
+        "concept_id": "c_009",
+        "description": "表: Checkins",
+        "key_columns": []
+      },
+      "Elite": {
+        "concept_id": "c_010",
+        "description": "表: Elite",
+        "key_columns": []
+      },
+      "Reviews": {
+        "concept_id": "c_011",
+        "description": "表: Reviews",
+        "key_columns": []
+      },
+      "Tips": {
+        "concept_id": "c_012",
+        "description": "表: Tips",
+        "key_columns": []
+      },
+      "Users_Compliments": {
+        "concept_id": "c_013",
+        "description": "表: Users_Compliments",
+        "key_columns": []
+      },
+      "Business": {
+        "concept_id": "c_014",
+        "description": "表: Business",
+        "key_columns": [
+          "business_id"
+        ]
+      },
+      "Users": {
+        "concept_id": "c_015",
+        "description": "表: Users",
+        "key_columns": [
+          "user_id"
+        ]
+      }
+    },
+    "foreign_keys": []
+  }
+}
