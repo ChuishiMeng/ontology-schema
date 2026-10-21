@@ -30,3 +30,6 @@ data/cache/
 .env
 *.pem
 *.key
+
+# macOS AppleDouble 侧车文件（exFAT 卷产生）
+._*
